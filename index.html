@@ -700,7 +700,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s5);flex-wrap:
     let played = false;
     const io = new IntersectionObserver(es => {
       if (es[0].isIntersecting && !played) { played = true; toNew(1400); io.disconnect(); }
-    }, { threshold: .35 });
+    }, { threshold: .15 });
     io.observe(stage);
   } else {
     state.textContent = 'Nachher · Entwurf in 24 Stunden';
