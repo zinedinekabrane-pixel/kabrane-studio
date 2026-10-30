@@ -3,277 +3,358 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kabrane Studio</title>
-<meta name="description" content="Kabrane Studio aus Wil SG: schnelle, schöne Websites, Chatbots, Flyer und Social-Media-Posts für Geschäfte in der Ostschweiz. Gratis-Entwurf in 48 Stunden.">
-<meta name="theme-color" content="#0c1311">
+<meta name="description" content="Kabrane Studio aus Wil SG: schnelle, schöne Websites, Chatbots, Flyer und Social-Media-Posts für Geschäfte in der Ostschweiz. Gratis-Entwurf in 24 Stunden.">
+<meta name="theme-color" content="#0a1413">
 <meta property="og:title" content="Kabrane Studio – Websites aus Wil SG">
-<meta property="og:description" content="Websites, Chatbots und Flyer für Geschäfte in der Ostschweiz. Gratis-Entwurf in 48 Stunden.">
+<meta property="og:description" content="Websites, Chatbots und Flyer für Geschäfte in der Ostschweiz. Gratis-Entwurf in 24 Stunden.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230c1311'/%3E%3Crect x='1' y='1' width='30' height='30' rx='9' fill='none' stroke='%23d6b072' stroke-width='1.5'/%3E%3Cpath d='M10 8v16M10 16.5 20 8M14 13l7.5 11' fill='none' stroke='%23ecebe4' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a1413'/%3E%3Crect x='3' y='9' width='26' height='16' rx='3' fill='none' stroke='%23c8a36a' stroke-width='1.6'/%3E%3Cpath d='M13 25A10 10 0 0 1 3 15M13 9a6 6 0 0 0 6 6' fill='none' stroke='%23eeebe3' stroke-width='1.8'/%3E%3C/svg%3E">
+<title>Kabrane Studio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: dark "Nachtkarte" – Höhenlinien der Ostschweiz als lebender Hintergrund, Messing als einziges Licht.
-   Breite Spalte 1180px, grosszügige Abschnitte, ein interaktiver Moment pro Abschnitt. */
+/* Layout: alles im Verhältnis 1 : 1,618. Abstände aus der Fibonacci-Folge, Schriftgrössen in Stufen von √φ,
+   Spalten im Goldenen Schnitt. Eine Goldene Spirale im Hero läuft auf den Hauptknopf zu.
+   Farbe: kühles Tannen-Petrol als Ruhe (60 %), helles Papier für Text (30 %), ein einziges warmes Amber
+   nur für Handlungen (10 %) – der Kontrast zur Komplementärfarbe macht Knöpfe sofort auffindbar. */
 :root{
-  --ink:#0c1311;          /* Grund: tiefes Tannengrün-Schwarz */
-  --ink-2:#121c19;        /* Flächen */
-  --ink-3:#1a2723;        /* Linien, Felder */
-  --paper:#ecebe4;        /* Text */
-  --mute:#9aa6a0;         /* leiser Text */
-  --brass:#d6b072;        /* Akzent: Messing */
-  --brass-dim:#8f7448;
-  --glacier:#9cc6bd;      /* zweiter, sparsamer Ton */
-  --line:rgba(214,176,114,.16);
-  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --f-body:"Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
-  --r:14px;
+  --phi:1.618;
+  /* Farbe */
+  --ink:#0a1413;          /* Grund: Tannen-Petrol, fast schwarz */
+  --ink-2:#0f1c1a;        /* Flächen */
+  --ink-3:#18292665;      /* Felder, transparente Linien */
+  --edge:rgba(238,235,227,.09);
+  --paper:#eeebe3;        /* Text */
+  --mute:#9daaa5;         /* leiser Text */
+  --brass:#c8a36a;        /* Struktur: Linien, Spirale, Nummern */
+  --brass-line:rgba(200,163,106,.2);
+  --champagne:#ead2aa;    /* Betonung in Überschriften */
+  --amber:#f5a94c;        /* NUR für Handlungen */
+  --amber-hi:#ffbd66;
+  --amber-glow:rgba(245,169,76,.28);
+  --sage:#8ec3b6;         /* Zustand: offen, aktiv */
+  --on-amber:#1a1006;
+  /* Schrift */
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  /* Schriftstufen: 17 px × √φ^n */
+  --t-2:10.5px; --t-1:13.4px; --t0:17px; --t1:21.6px; --t2:27.5px; --t3:35px; --t4:44.5px; --t5:56.6px; --t6:72px; --t7:91.6px;
+  /* Abstände: Fibonacci */
+  --s1:3px; --s2:5px; --s3:8px; --s4:13px; --s5:21px; --s6:34px; --s7:55px; --s8:89px; --s9:144px;
+  /* Radien */
+  --r1:8px; --r2:13px; --r3:21px;
+  --ease:cubic-bezier(.2,.8,.2,1);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:var(--t0);line-height:1.618;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
 a{color:inherit}
-::selection{background:var(--brass);color:var(--ink)}
-:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.eyebrow{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
-h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-.02em;line-height:1.02;text-wrap:balance;margin:0}
-h2{font-size:clamp(34px,5vw,60px)}
+::selection{background:var(--champagne);color:var(--ink)}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(21px,env(safe-area-inset-left,0px));padding-right:max(21px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:var(--t-1);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-.025em;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(var(--t3),4.6vw,var(--t5))}
+em.s{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--champagne)}
 p{margin:0}
-.lead{color:var(--mute);font-size:clamp(17px,1.6vw,19px);max-width:60ch}
+.lead{color:var(--mute);font-size:clamp(var(--t0),1.5vw,19px);max-width:34em}
+
+/* ---------- Knöpfe ---------- */
+.btn{display:inline-flex;align-items:center;gap:var(--s3);border:0;cursor:pointer;font:600 15.5px/1 var(--f-body);text-decoration:none;padding:var(--s4) var(--s5);min-height:48px;border-radius:999px;transition:transform .3s var(--ease),background .3s,color .3s,box-shadow .3s}
+.btn-go{background:var(--amber);color:var(--on-amber);box-shadow:0 0 0 1px rgba(255,214,150,.35) inset,0 13px 34px -13px var(--amber-glow),0 0 55px -8px var(--amber-glow)}
+.btn-go:hover{background:var(--amber-hi);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,214,150,.5) inset,0 21px 44px -13px rgba(245,169,76,.5),0 0 70px -8px var(--amber-glow)}
+.btn-line{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1px rgba(238,235,227,.24)}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--paper)}
+.btn-text{background:transparent;color:var(--paper);padding-inline:var(--s3);text-decoration:underline;text-decoration-color:rgba(238,235,227,.3);text-underline-offset:6px;text-decoration-thickness:1px}
+.btn-text:hover{text-decoration-color:var(--paper)}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
 
 /* ---------- Navigation ---------- */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(12,19,17,.72);border-bottom:1px solid rgba(255,255,255,.05)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:-.01em}
-.brand .mark{width:28px;height:28px}
-.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px;color:var(--mute)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);background:rgba(10,20,19,.74);border-bottom:1px solid var(--edge)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);padding-block:var(--s4)}
+.brand{display:flex;align-items:center;gap:var(--s3);text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-.01em}
+.brand svg{width:34px;height:21px}
+.nav ul{display:flex;gap:var(--s6);list-style:none;margin:0;padding:0;font-size:15px;color:var(--mute)}
 .nav ul a{text-decoration:none;transition:color .2s}
 .nav ul a:hover{color:var(--paper)}
-.btn{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;font:600 15.5px/1 var(--f-body);text-decoration:none;padding:15px 22px;border-radius:999px;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,box-shadow .25s}
-.btn-brass{background:var(--brass);color:var(--ink);box-shadow:0 8px 30px -10px rgba(214,176,114,.55)}
-.btn-brass:hover{transform:translateY(-2px);box-shadow:0 14px 40px -12px rgba(214,176,114,.7)}
-.btn-ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1px rgba(236,235,228,.22)}
-.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--brass);color:var(--brass)}
-.btn .arr{transition:transform .25s}
-.btn:hover .arr{transform:translateX(3px)}
-.nav .btn{padding:11px 18px;font-size:14.5px}
+.nav .btn{min-height:42px;padding:var(--s3) var(--s5);font-size:14.5px}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.05)}
-#topo{position:absolute;inset:0;width:100%;height:100%;opacity:.9;pointer-events:none}
-.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1200px 520px at 15% 30%,rgba(12,19,17,.0),rgba(12,19,17,.55) 70%),linear-gradient(180deg,rgba(12,19,17,0) 60%,var(--ink))}
-.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;padding-block:88px 96px}
-.hero h1{font-size:clamp(46px,7.2vw,98px);font-weight:600;margin:20px 0 24px}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--edge);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(89% 55% at 78% 0%,rgba(142,195,182,.09),transparent 62%),
+  radial-gradient(55% 55% at 0% 100%,rgba(200,163,106,.07),transparent 62%)}
+#phi{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:visible}
+#phi .sq{fill:none;stroke:var(--brass);stroke-opacity:.075;stroke-width:1}
+#phi .sp{fill:none;stroke:var(--brass);stroke-opacity:.36;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+#phi.draw .sp{animation:draw 3.4s var(--ease) .3s both}
+#phi.draw .sq{animation:fade 2.2s ease .9s both}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.glow{position:absolute;width:377px;height:377px;margin:-188px 0 0 -188px;border-radius:50%;background:radial-gradient(circle,rgba(245,169,76,.2),rgba(245,169,76,.05) 45%,transparent 70%);z-index:-1;pointer-events:none;left:0;top:0}
+.hero .wrap{position:relative;padding-block:var(--s8) var(--s8)}
+.hero h1{font-size:clamp(var(--t4),7.1vw,var(--t7));font-weight:600;line-height:.98;letter-spacing:-.035em;margin:var(--s5) 0 var(--s7);max-width:14.5em}
 .hero h1 .soft{font-weight:300;color:var(--mute)}
-.hero h1 em{font-style:normal;color:var(--brass);font-variation-settings:"opsz" 96}
-.hero .lead{margin-bottom:34px}
-.ctas{display:flex;flex-wrap:wrap;gap:12px}
-.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:38px;font-family:var(--f-mono);font-size:13px;color:var(--mute)}
-.facts span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--glacier);margin-right:9px;vertical-align:2px}
-.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
-.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.34s}
-@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+.hero h1 em.s{font-size:1.06em;letter-spacing:-.02em}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.618fr);gap:var(--s7);align-items:center}
+.pitch{display:grid;gap:var(--s6);padding-bottom:var(--s6)}
+.ctas{display:flex;flex-wrap:wrap;gap:var(--s4)}
+.facts{display:flex;flex-wrap:wrap;gap:var(--s3) var(--s5);font-family:var(--f-mono);font-size:var(--t-1);color:var(--mute)}
+.facts span{display:inline-flex;align-items:center;gap:var(--s3)}
+.facts span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sage)}
+.rise{animation:rise 1s var(--ease) both}
+.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.26s}
+@keyframes rise{from{transform:translateY(13px);opacity:.001}to{transform:none;opacity:1}}
 
-/* Vorher/Nachher-Browser */
-.compare{position:relative;border-radius:16px;background:var(--ink-2);box-shadow:0 0 0 1px rgba(255,255,255,.07),0 40px 90px -30px rgba(0,0,0,.8),0 0 0 8px rgba(214,176,114,.04);overflow:hidden}
-.chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#0f1715;border-bottom:1px solid rgba(255,255,255,.06)}
-.chrome i{width:10px;height:10px;border-radius:50%;background:#2a3632}
-.chrome .url{margin-left:10px;flex:1;min-width:0;font:12px var(--f-mono);color:var(--mute);background:#16211e;border-radius:6px;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.stage{position:relative;aspect-ratio:4/3.25;max-width:100%;overflow:hidden;user-select:none}
+/* ---------- Vorher / Nachher ---------- */
+figure{margin:0}
+.compare{container-type:inline-size;position:relative;border-radius:var(--r2);background:var(--ink-2);box-shadow:0 0 0 1px rgba(238,235,227,.1),0 55px 89px -34px rgba(0,0,0,.85),0 0 0 8px rgba(200,163,106,.035);overflow:hidden}
+.chrome{display:flex;align-items:center;gap:7px;padding:10px 13px;background:#0d1917;border-bottom:1px solid var(--edge)}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#26332f}
+.chrome .url{margin-left:var(--s3);flex:1;min-width:0;font:12px var(--f-mono);color:var(--mute);background:#13201d;border-radius:6px;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stage{position:relative;aspect-ratio:1.618/1;max-width:100%;overflow:hidden;user-select:none;-webkit-user-select:none}
 .layer{position:absolute;inset:0;overflow:hidden}
+
 /* Vorher: eine typische, veraltete Seite */
-.old{background:#e9e6df;color:#222;font-family:"Times New Roman",Times,serif;padding:14px 16px;font-size:13px}
-.old .ob{background:linear-gradient(#7d8fa8,#55657c);color:#fff;font:bold 20px Arial,sans-serif;padding:12px 14px;text-shadow:1px 1px 0 #333;border:2px outset #9aa}
-.old .menu{display:flex;gap:4px;margin:6px 0 10px;flex-wrap:wrap}
-.old .menu span{background:#c9c4b8;border:1px outset #ddd;padding:3px 8px;font:11px Verdana,sans-serif;color:#003399;text-decoration:underline}
-.old .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}
-.old h4{margin:0 0 4px;color:#990000;font-size:15px}
-.old p{font-size:12.5px;line-height:1.35;margin-bottom:6px}
-.old .imgph{height:92px;background:repeating-linear-gradient(45deg,#cfcabf 0 8px,#d9d4c9 8px 16px);border:1px solid #aaa;display:grid;place-items:center;font:11px Verdana;color:#777}
-.old .tbl{border:1px solid #999;font:11px Verdana;width:100%;border-collapse:collapse}
-.old .tbl td{border:1px solid #bbb;padding:3px 5px}
-.old .blink{color:#c00;font:bold 11px Verdana;margin-top:8px}
-.old .counter{margin-top:8px;font:10px Verdana;color:#555}
-/* Nachher */
-.new{background:#14110f;color:#f3ece2;font-family:var(--f-body)}
-.new .img{position:absolute;inset:0;background:
-  radial-gradient(120% 80% at 80% 10%,rgba(240,178,110,.45),transparent 55%),
-  radial-gradient(90% 70% at 10% 90%,rgba(120,70,40,.55),transparent 60%),
-  linear-gradient(160deg,#2a1d15,#120e0c 60%)}
-.new .img::after{content:"";position:absolute;left:-10%;top:18%;width:60%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 40% 35%,#f7e2c4 0 9%,#c98b55 10% 24%,#5a3420 25% 38%,transparent 39%),
-  radial-gradient(circle,rgba(0,0,0,.35) 0 52%,transparent 53%);filter:saturate(1.05)}
-.new .in{position:relative;height:100%;display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding:16px 20px 46px}
-.new .top{align-self:stretch}
-.new .top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(243,236,226,.75)}
-.new .top b{font-family:var(--f-display);text-transform:none;letter-spacing:-.01em;font-size:16px;color:#f3ece2}
-.new .hl{margin-top:auto;font-family:var(--f-display);font-weight:600;font-size:clamp(26px,3.4vw,40px);line-height:.98;letter-spacing:-.025em;max-width:11ch}
-.new .hl span{color:#f0b26e}
-.new .row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;justify-content:flex-end}
-.new .chip{font-size:11.5px;padding:7px 12px;border-radius:999px;background:rgba(243,236,226,.1);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.new .chip.b{background:#f0b26e;color:#1a120c;font-weight:600}
-.new .open{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;color:rgba(243,236,226,.8);margin-top:12px}
-.new .open::before{content:"";width:7px;height:7px;border-radius:50%;background:#7fd19b;box-shadow:0 0 0 4px rgba(127,209,155,.18)}
-.layer.new{clip-path:inset(0 0 0 var(--cut,50%))}
-.handle{position:absolute;top:0;bottom:0;left:var(--cut,50%);width:2px;margin-left:-1px;background:var(--brass);pointer-events:none;z-index:3}
-.handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--brass);color:var(--ink);display:grid;place-items:center;font-size:17px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.45)}
-.tag{position:absolute;bottom:12px;z-index:3;font:11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:6px;background:rgba(12,19,17,.82);color:var(--paper)}
-.tag.l{left:12px}.tag.r{right:12px;color:var(--brass)}
+.old{background:#e7e3da;color:#222;font-family:"Times New Roman",Times,serif;padding:1.8cqw 2.1cqw;font-size:1.65cqw}
+.old .ob{background:linear-gradient(#7d8fa8,#55657c);color:#fff;font:bold 2.7cqw Arial,sans-serif;padding:1.4cqw 1.8cqw;text-shadow:1px 1px 0 #333;border:2px outset #9aa}
+.old .menu{display:flex;gap:.6cqw;margin:.8cqw 0 1.3cqw;flex-wrap:wrap}
+.old .menu span{background:#c9c4b8;border:1px outset #ddd;padding:.35cqw 1cqw;font:1.45cqw Verdana,sans-serif;color:#003399;text-decoration:underline}
+.old .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:1.3cqw}
+.old h4{margin:0 0 .6cqw;color:#990000;font-size:2cqw}
+.old p{font-size:1.65cqw;line-height:1.35;margin-bottom:.8cqw}
+.old .imgph{height:13cqw;background:repeating-linear-gradient(45deg,#cfcabf 0 8px,#d9d4c9 8px 16px);border:1px solid #aaa;display:grid;place-items:center;font:1.4cqw Verdana;color:#777}
+.old .tbl{border:1px solid #999;font:1.45cqw Verdana;width:100%;border-collapse:collapse}
+.old .tbl td{border:1px solid #bbb;padding:.35cqw .7cqw}
+.old .blink{color:#c00;font:bold 1.45cqw Verdana;margin-top:1cqw}
+.old .counter{margin-top:1cqw;font:1.3cqw Verdana;color:#555}
+.old .marq{margin-top:1.3cqw;background:#ffff99;border:1px dashed #cc9;padding:.5cqw .8cqw;font:1.4cqw "Comic Sans MS","Comic Sans",cursive;color:#663}
+
+/* Nachher: Café Morgenrot, gebaut im Goldenen Schnitt (38,2 % | 61,8 %) */
+.new{--c-bg:#170f0b;--c-bg2:#21160f;--c-cream:#f5ead9;--c-dim:rgba(245,234,217,.62);--c-dawn:#f08a5d;--c-line:rgba(245,234,217,.12);
+  background:var(--c-bg);color:var(--c-cream);font-family:var(--f-body);clip-path:inset(0 0 0 var(--cut,38.2%))}
+.cafe{position:absolute;inset:0;display:grid;grid-template-columns:38.2% 61.8%}
+.cafe-side{background:linear-gradient(180deg,var(--c-bg2),#1a110c);border-right:1px solid var(--c-line);padding:2.6cqw 2.6cqw 2.1cqw;display:flex;flex-direction:column;gap:2.1cqw;min-width:0}
+.c-logo{display:flex;align-items:center;gap:1cqw;font:400 3.1cqw/1 var(--f-serif);letter-spacing:.01em}
+.c-logo svg{width:3.4cqw;height:3.4cqw;flex:none}
+.c-eyebrow{font:500 1.15cqw var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--c-dawn)}
+.c-menu{list-style:none;margin:.8cqw 0 0;padding:0;display:grid;gap:1.15cqw}
+.c-menu li{display:flex;align-items:baseline;gap:.8cqw;font-size:1.6cqw;color:var(--c-cream)}
+.c-menu li i{flex:1;border-bottom:1px dotted rgba(245,234,217,.28);transform:translateY(-.35cqw)}
+.c-menu li b{font-weight:500;font-variant-numeric:tabular-nums;color:var(--c-dim)}
+.c-special{margin-top:auto;border:1px solid rgba(240,138,93,.4);border-radius:1.3cqw;padding:1.4cqw 1.6cqw;background:linear-gradient(135deg,rgba(240,138,93,.14),rgba(240,138,93,.03));display:grid;gap:.4cqw}
+.c-special small{font:500 1.05cqw var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--c-dawn)}
+.c-special span{font:400 2.2cqw/1.1 var(--f-serif);display:flex;justify-content:space-between;gap:1cqw}
+.c-addr{font-size:1.25cqw;color:var(--c-dim)}
+.cafe-main{position:relative;min-width:0;overflow:hidden;background:
+  radial-gradient(70% 60% at 85% 18%,rgba(255,196,140,.22),transparent 62%),
+  radial-gradient(60% 50% at 20% 100%,rgba(240,138,93,.12),transparent 70%),
+  repeating-linear-gradient(97deg,rgba(255,255,255,.012) 0 2px,transparent 2px 9px),
+  linear-gradient(160deg,#2b1c13,#150d09 70%)}
+.c-nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:flex-end;align-items:center;gap:2.1cqw;padding:2.6cqw 2.6cqw;font-size:1.35cqw;color:var(--c-dim);z-index:2}
+.c-nav .c-res{color:var(--c-cream);border:1px solid rgba(245,234,217,.35);border-radius:999px;padding:.6cqw 1.4cqw}
+.cup{position:absolute;width:42cqw;right:-2.6cqw;top:5cqw;filter:drop-shadow(0 2cqw 2.4cqw rgba(0,0,0,.35))}
+.c-copy{position:absolute;left:3.4cqw;bottom:3.4cqw;width:31cqw;display:grid;gap:1.6cqw;z-index:2}
+.c-kicker{font:500 1.15cqw var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--c-dawn)}
+.c-copy h3{font:400 5.6cqw/.95 var(--f-serif);letter-spacing:-.015em;color:var(--c-cream);text-wrap:balance}
+.c-copy h3 em{font-style:italic;color:#ffc9a6}
+.c-cta{display:flex;gap:1cqw;flex-wrap:wrap}
+.c-btn{font:600 1.45cqw/1 var(--f-body);padding:1.15cqw 1.8cqw;border-radius:999px;background:var(--c-dawn);color:#22110a;box-shadow:0 1cqw 2.6cqw -1cqw rgba(240,138,93,.7)}
+.c-ghost{font:500 1.45cqw/1 var(--f-body);padding:1.15cqw 1.8cqw;border-radius:999px;border:1px solid rgba(245,234,217,.3);color:var(--c-cream)}
+.c-open{display:inline-flex;align-items:center;gap:.8cqw;font-size:1.3cqw;color:var(--c-dim)}
+.c-open::before{content:"";width:.9cqw;height:.9cqw;border-radius:50%;background:#86d49d;box-shadow:0 0 0 .5cqw rgba(134,212,157,.18)}
+
+/* Regler */
+.handle{position:absolute;top:0;bottom:0;left:var(--cut,38.2%);width:2px;margin-left:-1px;background:var(--paper);pointer-events:none;z-index:3;box-shadow:0 0 13px rgba(0,0,0,.4)}
+.handle::after{content:"";position:absolute;top:50%;left:50%;width:42px;height:42px;transform:translate(-50%,-50%);border-radius:50%;background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a1413' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 7 4 12l5 5M15 7l5 5-5 5'/%3E%3C/svg%3E") center/21px no-repeat;box-shadow:0 8px 21px rgba(0,0,0,.45)}
+.tag{position:absolute;bottom:13px;z-index:3;font:11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border-radius:5px;background:rgba(10,20,19,.84);color:var(--paper)}
+.tag.l{left:13px}.tag.r{right:13px}
 #cut{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
-.cap{margin-top:12px;font:12px var(--f-mono);color:var(--mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cap{margin-top:var(--s4);font:12px var(--f-mono);color:var(--mute);display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap}
+
+/* schmale Bühne (Handy): Nachher ohne Kartenspalte */
+@container (max-width:560px){
+  .stage{aspect-ratio:1/1.13}
+  .old{font-size:3cqw;padding:3cqw}
+  .old .ob{font-size:4.6cqw;padding:2.4cqw 3cqw}
+  .old .menu span{font-size:2.8cqw;padding:.6cqw 1.6cqw}
+  .old .menu{gap:1cqw;margin:1.6cqw 0 2.4cqw}
+  .old .cols{grid-template-columns:1fr}
+  .old h4{font-size:3.6cqw}.old p{font-size:3cqw}.old .tbl{font-size:2.8cqw}
+  .old .imgph{height:18cqw;font-size:2.8cqw}.old .blink,.old .counter,.old .marq{font-size:2.8cqw}
+  .cafe{grid-template-columns:1fr}
+  .cafe-side{display:none}
+  .c-nav{font-size:2.9cqw;gap:3.4cqw;padding:4cqw}
+  .c-nav .c-res{padding:1.2cqw 2.6cqw}
+  .cup{width:76cqw;right:-9cqw;top:10cqw}
+  .c-copy{left:5.5cqw;bottom:13cqw;width:80cqw;gap:3cqw}
+  .c-kicker{font-size:2.5cqw}
+  .c-copy h3{font-size:10.6cqw}
+  .c-btn,.c-ghost{font-size:3.1cqw;padding:2.4cqw 3.6cqw}
+  .c-cta{gap:2cqw}
+  .c-open{font-size:2.8cqw;gap:1.6cqw}
+  .c-open::before{width:1.8cqw;height:1.8cqw}
+}
 
 /* ---------- Abschnitte ---------- */
-section.block{padding-block:clamp(84px,11vw,140px);position:relative}
-.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
-.head .eyebrow{display:block;margin-bottom:18px}
+section.block{padding-block:clamp(var(--s8),11vw,var(--s9));position:relative}
+.head{display:grid;grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);gap:var(--s7);align-items:end;margin-bottom:var(--s7)}
+.head .eyebrow{display:block;margin-bottom:var(--s5)}
 
-/* Leistungen als grosse Liste */
-.services{border-top:1px solid var(--line)}
-.svc{display:grid;grid-template-columns:72px 1.1fr 1.3fr auto;gap:28px;align-items:center;padding:30px 4px;border-bottom:1px solid var(--line);position:relative;transition:padding .35s cubic-bezier(.2,.8,.2,1)}
-.svc::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(214,176,114,.08),transparent 70%);opacity:0;transition:opacity .35s;pointer-events:none}
-.svc:hover{padding-left:16px}
+/* Leistungen */
+.services{border-top:1px solid var(--brass-line)}
+.svc{display:grid;grid-template-columns:55px minmax(0,1fr) minmax(0,1.618fr) 8em;gap:var(--s6);align-items:center;padding:var(--s6) var(--s2);border-bottom:1px solid var(--brass-line);position:relative;transition:padding .4s var(--ease)}
+.svc::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(200,163,106,.07),transparent 62%);opacity:0;transition:opacity .4s;pointer-events:none}
+.svc:hover{padding-left:var(--s4)}
 .svc:hover::before{opacity:1}
-.svc .ico{width:48px;height:48px;color:var(--brass)}
-.svc h3{font-size:clamp(26px,3vw,38px);font-weight:500}
+.svc .ico{width:44px;height:44px;color:var(--brass)}
+.svc h3{font-size:clamp(var(--t2),3vw,var(--t3));font-weight:500}
 .svc p{color:var(--mute);font-size:16px;min-width:0}
-.svc .price{font:500 14px var(--f-mono);color:var(--paper);white-space:nowrap}
-.svc .price small{display:block;color:var(--mute);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.svc .price{font:500 15px var(--f-mono);color:var(--paper);white-space:nowrap;text-align:right}
+.svc .price small{display:block;color:var(--mute);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 
 /* Chatbot-Demo */
-.demo{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
-.demo ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
-.demo li{display:flex;gap:14px;color:var(--mute)}
+.demo-band{background:linear-gradient(180deg,transparent,rgba(15,28,26,.85) 38%,transparent)}
+.demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s8);align-items:center}
+.demo ul{list-style:none;padding:0;margin:var(--s6) 0 0;display:grid;gap:var(--s4)}
+.demo li{display:flex;gap:var(--s4);color:var(--mute)}
 .demo li b{color:var(--paper);font-weight:600}
-.demo li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:radial-gradient(circle,var(--brass) 0 3px,transparent 4px),rgba(214,176,114,.14)}
-.phone{background:#f4efe8;color:#2a2420;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 50px 100px -40px rgba(0,0,0,.9);max-width:460px;justify-self:end;width:100%}
-.phone .bar{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#1f3b35;color:#f4efe8}
-.phone .av{width:38px;height:38px;border-radius:50%;background:#d6b072;color:#1f3b35;display:grid;place-items:center;font:700 15px var(--f-display)}
+.demo li::before{content:"";flex:none;width:21px;height:21px;margin-top:3px;border-radius:50%;background:radial-gradient(circle,var(--sage) 0 3px,transparent 4px),rgba(142,195,182,.13)}
+.phone{background:#f4efe8;color:#2a2420;border-radius:var(--r3);overflow:hidden;box-shadow:0 0 0 1px rgba(238,235,227,.08),0 55px 89px -34px rgba(0,0,0,.9);max-width:440px;justify-self:end;width:100%}
+.phone .bar{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) var(--s5);background:#1f3b35;color:#f4efe8}
+.phone .av{width:38px;height:38px;border-radius:50%;background:#e9c98f;color:#1f3b35;display:grid;place-items:center;font:700 15px var(--f-display)}
 .phone .bar b{display:block;font:600 15px var(--f-body)}
-.phone .bar small{font-size:12px;opacity:.8}
-.phone .bar small::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#7fd19b;margin-right:6px}
-.msgs{height:380px;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;background:
-  radial-gradient(circle at 1px 1px,rgba(31,59,53,.07) 1px,transparent 0) 0 0/16px 16px,#f4efe8}
-.m{max-width:84%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.45;animation:pop .35s cubic-bezier(.2,.8,.2,1) both}
+.phone .bar small{font-size:12px;opacity:.82}
+.phone .bar small::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#86d49d;margin-right:6px}
+.msgs{height:377px;overflow-y:auto;padding:var(--s5) var(--s4);display:flex;flex-direction:column;gap:var(--s3);scroll-behavior:smooth;background:radial-gradient(circle at 1px 1px,rgba(31,59,53,.07) 1px,transparent 0) 0 0/13px 13px,#f4efe8}
+.m{max-width:84%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.45;animation:pop .35s var(--ease) both}
 .m.a{background:#fff;border:1px solid #e3dbd0;align-self:flex-start;border-bottom-left-radius:5px}
 .m.u{background:#1f3b35;color:#f4efe8;align-self:flex-end;border-bottom-right-radius:5px}
-.m.typing{display:flex;gap:4px;padding:14px}
+.m.typing{display:flex;gap:4px;padding:13px}
 .m.typing i{width:6px;height:6px;border-radius:50%;background:#a99d8f;animation:blink 1s infinite}
 .m.typing i:nth-child(2){animation-delay:.15s}.m.typing i:nth-child(3){animation-delay:.3s}
 @keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
-@keyframes pop{from{transform:translateY(6px) scale(.98)}to{transform:none}}
-.quick{display:flex;gap:7px;flex-wrap:wrap;padding:10px 14px 0;background:#f4efe8;border-top:1px solid #e3dbd0}
-.quick button{font:500 13px var(--f-body);color:#1f3b35;background:#fff;border:1px solid #d9cfc2;border-radius:999px;padding:7px 12px;cursor:pointer;transition:background .2s,border-color .2s}
+@keyframes pop{from{transform:translateY(5px) scale(.98)}to{transform:none}}
+.quick{display:flex;gap:7px;flex-wrap:wrap;padding:var(--s4) var(--s4) 0;background:#f4efe8;border-top:1px solid #e3dbd0}
+.quick button{font:500 13px var(--f-body);color:#1f3b35;background:#fff;border:1px solid #d9cfc2;border-radius:999px;padding:8px 13px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .quick button:hover{background:#1f3b35;color:#f4efe8;border-color:#1f3b35}
-.composer{display:flex;gap:8px;padding:12px 14px 14px;background:#f4efe8}
-.composer input{flex:1;min-width:0;font:15px var(--f-body);color:#2a2420;background:#fff;border:1px solid #d9cfc2;border-radius:999px;padding:11px 16px;outline:none}
+.composer{display:flex;gap:var(--s3);padding:var(--s4) var(--s4) var(--s4);background:#f4efe8}
+.composer input{flex:1;min-width:0;font:16px var(--f-body);color:#2a2420;background:#fff;border:1px solid #d9cfc2;border-radius:999px;padding:11px 16px;outline:none}
 .composer input:focus{border-color:#1f3b35}
 .composer button{width:44px;height:44px;flex:none;border-radius:50%;border:0;background:#1f3b35;color:#f4efe8;cursor:pointer;font-size:18px}
-.demo-note{margin-top:14px;font:12px var(--f-mono);color:var(--mute);text-align:right}
+.demo-note{margin-top:var(--s4);font:12px var(--f-mono);color:var(--mute);text-align:right}
 
 /* Pakete */
-.toggle{display:inline-flex;padding:5px;border-radius:999px;background:var(--ink-2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);margin-bottom:34px}
-.toggle button{font:600 14.5px var(--f-body);color:var(--mute);background:transparent;border:0;border-radius:999px;padding:11px 18px;cursor:pointer;transition:background .25s,color .25s}
-.toggle button[aria-pressed="true"]{background:var(--brass);color:var(--ink)}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.plan{position:relative;padding:32px 28px 30px;border-radius:var(--r);background:var(--ink-2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);display:flex;flex-direction:column;gap:18px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.plan:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(214,176,114,.35)}
-.plan.hot{background:linear-gradient(180deg,rgba(214,176,114,.12),rgba(214,176,114,.02) 40%),var(--ink-2);box-shadow:inset 0 0 0 1px rgba(214,176,114,.45)}
-.plan .badge{position:absolute;top:-12px;left:28px;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;background:var(--brass);color:var(--ink);padding:5px 10px;border-radius:6px}
-.plan h3{font-size:26px;font-weight:600}
-.plan .amt{font-family:var(--f-display);font-size:46px;font-weight:600;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.toggle{display:inline-flex;padding:5px;border-radius:999px;background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--edge);margin-bottom:var(--s6)}
+.toggle button{font:600 14.5px var(--f-body);color:var(--mute);background:transparent;border:0;border-radius:999px;padding:11px 21px;cursor:pointer;transition:background .25s,color .25s}
+.toggle button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5);align-items:stretch}
+.plan{position:relative;padding:var(--s6) var(--s6) var(--s6);border-radius:var(--r2);background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--edge);display:flex;flex-direction:column;gap:var(--s5);transition:transform .4s var(--ease),box-shadow .4s}
+.plan:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgba(238,235,227,.2)}
+.plan.hot{background:linear-gradient(180deg,rgba(245,169,76,.11),rgba(245,169,76,.015) 38.2%),var(--ink-2);box-shadow:inset 0 0 0 1px rgba(245,169,76,.5),0 34px 89px -55px rgba(245,169,76,.55)}
+.plan .badge{position:absolute;top:-12px;left:var(--s6);font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:5px 10px;border-radius:6px}
+.plan h3{font-size:var(--t2);font-weight:600}
+.plan .amt{font-family:var(--f-display);font-size:var(--t4);font-weight:600;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
 .plan .amt small{font:500 14px var(--f-body);color:var(--mute);letter-spacing:0;margin-left:6px}
-.plan .then{font:13px var(--f-mono);color:var(--glacier);min-height:2.6em}
-.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:15px;color:var(--mute)}
-.plan li{display:flex;gap:10px}
-.plan li::before{content:"✓";color:var(--brass);font-weight:700}
+.plan .then{font:13px var(--f-mono);color:var(--sage);min-height:2.7em}
+.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3);font-size:15px;color:var(--mute)}
+.plan li{display:flex;gap:var(--s4)}
+.plan li::before{content:"";flex:none;width:13px;height:8px;margin-top:7px;border-left:1.6px solid var(--brass);border-bottom:1.6px solid var(--brass);transform:rotate(-45deg)}
 .plan .btn{margin-top:auto;justify-content:center}
-.plans-note{margin-top:22px;color:var(--mute);font-size:14.5px;max-width:75ch}
+.plans-note{margin-top:var(--s5);color:var(--mute);font-size:14.5px;max-width:48em}
 
 /* Ablauf */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;position:relative}
-.steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:linear-gradient(90deg,var(--brass),rgba(214,176,114,.1))}
-.step{position:relative;padding-right:28px}
-.step .n{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--ink);box-shadow:inset 0 0 0 1px var(--brass);font:500 14px var(--f-mono);color:var(--brass);margin-bottom:26px;position:relative}
-.step h3{font-size:23px;font-weight:600;margin-bottom:10px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:linear-gradient(90deg,var(--brass),rgba(200,163,106,.08))}
+.step{position:relative;padding-right:var(--s6)}
+.step .n{width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:var(--ink);box-shadow:inset 0 0 0 1px var(--brass);font:500 14px var(--f-mono);color:var(--brass);margin-bottom:var(--s5);position:relative}
+.step h3{font-size:var(--t1);font-weight:600;margin-bottom:var(--s3)}
 .step p{color:var(--mute);font-size:15.5px}
-.step .t{display:inline-block;margin-top:14px;font:12px var(--f-mono);color:var(--glacier)}
+.step .t{display:inline-block;margin-top:var(--s4);font:12px var(--f-mono);color:var(--sage)}
 
 /* Fragen */
-.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
-details{border-bottom:1px solid var(--line);padding:22px 0}
-details:first-of-type{border-top:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font:500 clamp(18px,2vw,21px)/1.3 var(--f-display)}
+.faq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.618fr);gap:var(--s7)}
+details{border-bottom:1px solid var(--brass-line);padding:var(--s5) 0}
+details:first-of-type{border-top:1px solid var(--brass-line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:var(--s5);font:500 clamp(18px,2vw,var(--t1))/1.3 var(--f-display)}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--brass);font-weight:300;font-size:28px;line-height:.8;transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--mute);margin-top:12px;max-width:62ch}
+details p{color:var(--mute);margin-top:var(--s4);max-width:38em}
 
 /* Kontakt */
-.contact{background:linear-gradient(180deg,var(--ink-2),var(--ink));border-top:1px solid var(--line)}
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.big{font-size:clamp(44px,6.4vw,84px)}
-.big em{font-style:normal;color:var(--brass)}
-.direct{margin-top:34px;display:grid;gap:12px}
-.direct div{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:15px var(--f-mono)}
+.contact{background:linear-gradient(180deg,var(--ink-2),var(--ink));border-top:1px solid var(--brass-line)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s8);align-items:start}
+.big{font-size:clamp(var(--t4),6vw,var(--t6))}
+.direct{margin-top:var(--s6);display:grid;gap:var(--s4)}
+.direct div{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap;font:15px var(--f-mono)}
 .direct span.k{color:var(--mute);width:62px}
-.copy{font:500 12px var(--f-mono);color:var(--brass);background:transparent;border:1px solid rgba(214,176,114,.35);border-radius:6px;padding:5px 9px;cursor:pointer}
-.copy:hover{background:rgba(214,176,114,.1)}
-form{display:grid;gap:14px;background:var(--ink-2);padding:28px;border-radius:var(--r);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:grid;gap:7px;font:500 13px var(--f-body);color:var(--mute)}
-input,select,textarea{font:16px var(--f-body);color:var(--paper);background:var(--ink);border:1px solid var(--ink-3);border-radius:10px;padding:13px 14px;outline:none;transition:border-color .2s;width:100%;min-width:0}
+.copy{font:500 12px var(--f-mono);color:var(--paper);background:transparent;border:1px solid rgba(238,235,227,.24);border-radius:6px;padding:6px 10px;cursor:pointer}
+.copy:hover{border-color:var(--paper)}
+form.leadform{display:grid;gap:var(--s4);background:var(--ink-2);padding:var(--s6);border-radius:var(--r2);box-shadow:inset 0 0 0 1px var(--edge)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+label{display:grid;gap:var(--s3);font:500 13px var(--f-body);color:var(--mute)}
+input,select,textarea{font:16px var(--f-body);color:var(--paper);background:var(--ink);border:1px solid rgba(238,235,227,.12);border-radius:var(--r1);padding:13px 13px;outline:none;transition:border-color .2s;width:100%;min-width:0}
 textarea{min-height:110px;resize:vertical}
-input:focus,select:focus,textarea:focus{border-color:var(--brass)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
+input:focus,select:focus,textarea:focus{border-color:var(--champagne)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s3)}
 .chips label{display:block}
 .chips input{position:absolute;opacity:0;width:1px;height:1px}
-.chips span{display:inline-block;padding:8px 13px;border-radius:999px;border:1px solid var(--ink-3);color:var(--paper);font:500 14px var(--f-body);cursor:pointer;transition:all .2s}
-.chips input:checked+span{background:var(--brass);border-color:var(--brass);color:var(--ink)}
-.chips input:focus-visible+span{outline:2px solid var(--brass);outline-offset:2px}
-.result{background:var(--ink);border:1px solid rgba(214,176,114,.35);border-radius:10px;padding:16px;display:grid;gap:12px}
-.result pre{margin:0;white-space:pre-wrap;font:13px/1.55 var(--f-mono);color:var(--paper);max-height:220px;overflow:auto}
+.chips span{display:inline-block;padding:8px 13px;border-radius:999px;border:1px solid rgba(238,235,227,.16);color:var(--paper);font:500 14px var(--f-body);cursor:pointer;transition:all .2s}
+.chips input:checked+span{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.chips input:focus-visible+span{outline:2px solid var(--champagne);outline-offset:2px}
+.result{background:var(--ink);border:1px solid rgba(238,235,227,.2);border-radius:var(--r1);padding:var(--s5);display:grid;gap:var(--s4)}
+.result pre{margin:0;white-space:pre-wrap;font:13px/1.55 var(--f-mono);color:var(--paper);max-height:233px;overflow:auto}
 .result p{font-size:14px;color:var(--mute)}
-footer{border-top:1px solid rgba(255,255,255,.05);padding-block:30px;color:var(--mute);font-size:13.5px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer{border-top:1px solid var(--edge);padding-block:var(--s6);color:var(--mute);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:var(--s5);flex-wrap:wrap}
 
 /* ---------- Responsive ---------- */
 @media (max-width:980px){
-  .hero .wrap,.demo,.faq,.cgrid,.head{grid-template-columns:1fr}
-  .hero .wrap{padding-block:56px 72px;gap:44px}
+  .hero-row,.demo,.faq,.cgrid,.head{grid-template-columns:minmax(0,1fr)}
+  .hero .wrap{padding-block:var(--s7) var(--s7)}
+  .hero h1{margin-bottom:var(--s6)}
+  .pitch{padding-bottom:0}
   .phone{justify-self:stretch;max-width:none}
-  .plans{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr;gap:40px 0}
+  .plans{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:1fr 1fr;gap:var(--s6) 0}
   .steps::before{display:none}
-  .svc{grid-template-columns:52px 1fr;gap:6px 18px}
-  .svc .ico{width:40px;height:40px;grid-row:span 3}
-  .svc .price{margin-top:6px}
+  .svc{grid-template-columns:44px minmax(0,1fr);gap:var(--s2) var(--s5)}
+  .svc .ico{width:36px;height:36px;grid-row:span 3;align-self:start}
+  .svc .price{text-align:left;margin-top:var(--s3)}
   .nav ul{display:none}
+  .demo{gap:var(--s7)}
+  .cgrid{gap:var(--s7)}
 }
 @media (max-width:560px){
   body{font-size:16px}
   .steps{grid-template-columns:1fr}
   .f2{grid-template-columns:1fr}
-  form{padding:20px}
+  form.leadform{padding:var(--s5)}
   .nav .btn .long{display:none}
-  .msgs{height:330px}
+  .msgs{height:333px}
+  .plan{padding:var(--s6) var(--s5)}
+  .ctas .btn{flex:1 1 auto;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
 </style>
-<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<style>[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
+
 <nav class="nav" aria-label="Hauptnavigation">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Kabrane Studio, nach oben">
-      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="9" fill="none" stroke="#d6b072" stroke-width="1.5"/><path d="M10 8v16M10 16.5 20 8M14 13l7.5 11" fill="none" stroke="#ecebe4" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 34 21" aria-hidden="true"><rect x=".75" y=".75" width="32.5" height="19.5" rx="4" fill="none" stroke="#c8a36a" stroke-width="1.5"/><path d="M13.75 .75v19.5M13.75 8.2h19.5" stroke="#c8a36a" stroke-width="1" opacity=".55"/><path d="M13.75 20.25A13 13 0 0 1 .75 7.25" fill="none" stroke="#eeebe3" stroke-width="1.6"/><path d="M13.75 .75a8 8 0 0 0 8 7.45" fill="none" stroke="#eeebe3" stroke-width="1.6"/></svg>
       Kabrane Studio
     </a>
     <ul>
@@ -282,63 +363,146 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <li><a href="#pakete">Pakete</a></li>
       <li><a href="#ablauf">Ablauf</a></li>
     </ul>
-    <a class="btn btn-brass" href="#kontakt"><span class="long">Gratis-Entwurf</span><span class="arr">→</span></a>
+    <a class="btn btn-go" href="#kontakt"><span class="long">Gratis-Entwurf</span><span class="arr">→</span></a>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <canvas id="topo" aria-hidden="true"></canvas>
+  <svg id="phi" aria-hidden="true"></svg>
+  <div class="glow" id="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div>
-      <span class="eyebrow rise">Websites · Chatbots · Flyer — aus Wil SG</span>
-      <h1 class="rise d1">Ihre Website <span class="soft">sollte</span> <em>verkaufen,</em> <span class="soft">nicht nur</span> da sein.</h1>
-      <p class="lead rise d2">Kabrane Studio baut schnelle, schöne Websites für Geschäfte in der Ostschweiz: mit Chatbot, der Kundenfragen rund um die Uhr beantwortet, und auf Wunsch mit Betreuung. Den ersten Entwurf sehen Sie, bevor Sie etwas bezahlen.</p>
-      <div class="ctas rise d3">
-        <a class="btn btn-brass" href="#kontakt">Gratis-Entwurf anfragen <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="#demo">Chatbot ausprobieren</a>
-      </div>
-      <div class="facts rise d4">
-        <span>Entwurf in 48 Stunden</span><span>ab Fr. 490.–</span><span>Website gehört Ihnen</span>
-      </div>
-    </div>
-
-    <figure class="rise d2" style="margin:0">
-      <div class="compare">
-        <div class="chrome"><i></i><i></i><i></i><div class="url">www.cafe-morgenrot.ch</div></div>
-        <div class="stage" id="stage" style="--cut:34%">
-          <div class="layer old" aria-hidden="true">
-            <div class="ob">Café Morgenrot - Herzlich Willkommen!!!</div>
-            <div class="menu"><span>Home</span><span>Über uns</span><span>Speisekarte (PDF)</span><span>Gästebuch</span><span>Kontakt</span></div>
-            <div class="cols">
-              <div>
-                <h4>Willkommen auf unserer Homepage</h4>
-                <p>Wir freuen uns Sie auf unserer neuen Internetseite begrüssen zu dürfen. Hier finden Sie alles über unser Café.</p>
-                <div class="imgph">Bild wird geladen…</div>
-                <div class="blink">*** NEU: Jetzt auch mit Sonntagsbrunch!!! ***</div>
-              </div>
-              <div>
-                <table class="tbl"><tr><td>Mo</td><td>geschlossen</td></tr><tr><td>Di-Fr</td><td>7.30-18.00</td></tr><tr><td>Sa</td><td>8.00-17.00</td></tr><tr><td>So</td><td>9.00-17.00</td></tr></table>
-                <p style="margin-top:8px">Tel. 071 xxx xx xx<br>Bitte Speisekarte als PDF herunterladen.</p>
-                <div class="counter">Besucher: 004.217 · Optimiert für 1024x768</div>
-              </div>
-            </div>
-          </div>
-          <div class="layer new" aria-hidden="true">
-            <div class="img"></div>
-            <div class="in">
-              <div class="top"><b>Morgenrot</b><span>Karte · Brunch · Reservieren</span></div>
-              <div class="hl">Der beste Kaffee <span>der Altstadt.</span></div>
-              <div class="row"><span class="chip b">Tisch reservieren</span><span class="chip">Sonntagsbrunch</span><span class="chip">Speisekarte</span></div>
-              <div class="open">Heute offen bis 18:00</div>
-            </div>
-          </div>
-          <div class="handle" aria-hidden="true"></div>
-          <span class="tag l">Vorher</span><span class="tag r">Nachher</span>
-          <input type="range" id="cut" min="0" max="100" value="34" aria-label="Vorher und Nachher vergleichen">
+    <span class="eyebrow rise">Websites · Chatbots · Flyer · aus Wil SG</span>
+    <h1 class="rise d1">Ihre Website <span class="soft">sollte</span> <em class="s">verkaufen,</em> <span class="soft">nicht nur da sein.</span></h1>
+    <div class="hero-row">
+      <div class="pitch rise d2">
+        <p class="lead">Kabrane Studio baut schnelle, schöne Websites für Geschäfte in der Ostschweiz, mit Chatbot und auf Wunsch mit Betreuung. Den ersten Entwurf sehen Sie, bevor Sie etwas bezahlen.</p>
+        <div class="ctas">
+          <a class="btn btn-go" id="main-cta" href="#kontakt">Gratis-Entwurf anfragen <span class="arr">→</span></a>
+          <a class="btn btn-text" href="#demo">Chatbot ausprobieren</a>
         </div>
+        <div class="facts"><span>Entwurf in 24 Stunden</span><span>ab Fr. 490.–</span><span>Website gehört Ihnen</span></div>
       </div>
-      <figcaption class="cap"><span>← Ziehen zum Vergleichen →</span><span>Beispiel · Café Morgenrot ist erfunden</span></figcaption>
-    </figure>
+
+      <figure class="rise d3">
+        <div class="compare">
+          <div class="chrome"><i></i><i></i><i></i><div class="url">www.cafe-morgenrot.ch</div></div>
+          <div class="stage" id="stage" style="--cut:38.2%">
+            <div class="layer old" aria-hidden="true">
+              <div class="ob">Café Morgenrot - Herzlich Willkommen!!!</div>
+              <div class="menu"><span>Home</span><span>Über uns</span><span>Speisekarte (PDF)</span><span>Gästebuch</span><span>Links</span><span>Kontakt</span></div>
+              <div class="cols">
+                <div>
+                  <h4>Willkommen auf unserer Homepage</h4>
+                  <p>Wir freuen uns Sie auf unserer neuen Internetseite begrüssen zu dürfen. Hier finden Sie alles über unser Café und unser Angebot.</p>
+                  <div class="imgph">Bild wird geladen…</div>
+                  <div class="blink">*** NEU: Jetzt auch mit Sonntagsbrunch!!! ***</div>
+                </div>
+                <div>
+                  <table class="tbl"><tr><td>Mo</td><td>geschlossen</td></tr><tr><td>Di-Fr</td><td>7.30-18.00</td></tr><tr><td>Sa</td><td>8.00-17.00</td></tr><tr><td>So</td><td>9.00-17.00</td></tr></table>
+                  <p style="margin-top:1cqw">Tel. 071 xxx xx xx<br>Bitte Speisekarte als PDF herunterladen.</p>
+                  <div class="marq">Tragen Sie sich in unser Gästebuch ein!</div>
+                  <div class="counter">Besucher: 004.217 · Optimiert für 1024x768</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="layer new" aria-hidden="true">
+              <div class="cafe">
+                <aside class="cafe-side">
+                  <div class="c-logo"><svg viewBox="0 0 32 32"><path d="M4 21h24" stroke="#f08a5d" stroke-width="2" stroke-linecap="round"/><path d="M8.5 21a7.5 7.5 0 0 1 15 0" fill="#f08a5d"/><path d="M16 6v3.5M7 10l2.3 2.3M25 10l-2.3 2.3M3 16.5h3M26 16.5h3" stroke="#f5ead9" stroke-width="1.6" stroke-linecap="round" opacity=".75"/><path d="M8 25.5h16" stroke="#f5ead9" stroke-width="1.4" stroke-linecap="round" opacity=".45"/></svg>Morgenrot</div>
+                  <div>
+                    <span class="c-eyebrow">Heute auf der Karte</span>
+                    <ul class="c-menu">
+                      <li><span>Espresso</span><i></i><b>4.20</b></li>
+                      <li><span>Cappuccino</span><i></i><b>5.20</b></li>
+                      <li><span>Flat White</span><i></i><b>5.60</b></li>
+                      <li><span>Hausgipfeli</span><i></i><b>2.80</b></li>
+                      <li><span>Rüeblitorte</span><i></i><b>6.50</b></li>
+                    </ul>
+                  </div>
+                  <div class="c-special"><small>Nur im Herbst</small><span>Kürbis-Zimt-Latte <b style="font-family:var(--f-body);font-weight:500;font-size:1.5cqw;align-self:center">6.40</b></span></div>
+                  <div class="c-addr">Altstadt Wil · Di–So ab 7.30</div>
+                </aside>
+                <div class="cafe-main">
+                  <div class="c-nav"><span>Karte</span><span>Brunch</span><span>Über uns</span><span class="c-res">Reservieren</span></div>
+                  <svg class="cup" viewBox="0 0 400 380">
+                    <defs>
+                      <radialGradient id="g-sau" cx="42%" cy="38%" r="62%"><stop offset="0" stop-color="#fbf6ee"/><stop offset=".72" stop-color="#ebe0d1"/><stop offset="1" stop-color="#cbbaa4"/></radialGradient>
+                      <radialGradient id="g-well" cx="50%" cy="50%" r="50%"><stop offset=".78" stop-color="#ece2d5"/><stop offset="1" stop-color="#d3c4b0"/></radialGradient>
+                      <radialGradient id="g-cup" cx="38%" cy="34%" r="68%"><stop offset="0" stop-color="#fffefb"/><stop offset=".7" stop-color="#f1e9de"/><stop offset="1" stop-color="#d6c7b4"/></radialGradient>
+                      <radialGradient id="g-wall" cx="58%" cy="62%" r="55%"><stop offset=".6" stop-color="#e4d8c8"/><stop offset="1" stop-color="#bfae98"/></radialGradient>
+                      <radialGradient id="g-cof" cx="46%" cy="44%" r="54%"><stop offset="0" stop-color="#c99260"/><stop offset=".5" stop-color="#a06a3d"/><stop offset=".82" stop-color="#734424"/><stop offset="1" stop-color="#3e2312"/></radialGradient>
+                      <linearGradient id="g-spoon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafaf8"/><stop offset=".45" stop-color="#9fa4a7"/><stop offset=".7" stop-color="#e8e9e8"/><stop offset="1" stop-color="#b9bdbf"/></linearGradient>
+                      <filter id="f-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter>
+                      <filter id="f-milk" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation=".55"/></filter>
+                      <filter id="f-tight" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5"/></filter>
+                    </defs>
+                    <!-- Kaffeebohnen und Zucker auf dem Tisch -->
+                    <g fill="#3a2215">
+                      <g transform="translate(46 64) rotate(28)"><ellipse rx="12" ry="8"/><path d="M-10 0C-4-3.5 4 3.5 10 0" stroke="#1b0e07" stroke-width="1.7" fill="none"/></g>
+                      <g transform="translate(76 40) rotate(-40)"><ellipse rx="11" ry="7.5"/><path d="M-9 0C-3-3 3 3 9 0" stroke="#1b0e07" stroke-width="1.6" fill="none"/></g>
+                      <g transform="translate(40 330) rotate(70)"><ellipse rx="11.5" ry="7.8"/><path d="M-9.5 0C-3-3.2 3 3.2 9.5 0" stroke="#1b0e07" stroke-width="1.6" fill="none"/></g>
+                    </g>
+                    <g>
+                      <rect x="338" y="44" width="30" height="30" rx="4" fill="#fbf8f2" transform="rotate(14 353 59)"/>
+                      <rect x="338" y="44" width="30" height="30" rx="4" fill="none" stroke="#d9cfc0" stroke-width="1" transform="rotate(14 353 59)"/>
+                      <rect x="352" y="82" width="26" height="26" rx="4" fill="#f2ece2" transform="rotate(-9 365 95)"/>
+                    </g>
+                    <!-- Schatten der Untertasse -->
+                    <circle cx="216" cy="206" r="138" fill="#000" opacity=".5" filter="url(#f-soft)"/>
+                    <!-- Untertasse -->
+                    <circle cx="200" cy="190" r="140" fill="url(#g-sau)"/>
+                    <circle cx="200" cy="190" r="136" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/>
+                    <circle cx="200" cy="190" r="98" fill="url(#g-well)"/>
+                    <!-- Löffel -->
+                    <g transform="rotate(-36 120 262)">
+                      <rect x="40" y="257" width="92" height="9" rx="4.5" fill="url(#g-spoon)"/>
+                      <ellipse cx="146" cy="261.5" rx="20" ry="13" fill="url(#g-spoon)"/>
+                      <ellipse cx="148" cy="260" rx="13" ry="7.5" fill="#fff" opacity=".35"/>
+                    </g>
+                    <!-- Tasse -->
+                    <circle cx="208" cy="198" r="90" fill="#000" opacity=".28" filter="url(#f-tight)"/>
+                    <rect x="276" y="174" width="54" height="32" rx="16" fill="url(#g-cup)"/>
+                    <rect x="290" y="183" width="28" height="14" rx="7" fill="#d9ccbb" opacity=".55"/>
+                    <circle cx="200" cy="190" r="90" fill="url(#g-cup)"/>
+                    <circle cx="200" cy="190" r="78" fill="url(#g-wall)"/>
+                    <circle cx="201" cy="191" r="72" fill="url(#g-cof)"/>
+                    <!-- Milchschaum: Rosetta -->
+                    <g transform="translate(201 199) rotate(-16)" fill="#f7ecdd" filter="url(#f-milk)">
+                      <path d="M-50 36Q0 14 50 36Q0 26 -50 36Z"/>
+                      <path d="M-44.8 24.5Q0 2.5 44.8 24.5Q0 14.5 -44.8 24.5Z"/>
+                      <path d="M-39.6 13Q0 -9 39.6 13Q0 3 -39.6 13Z"/>
+                      <path d="M-34.4 1.5Q0 -20.5 34.4 1.5Q0 -8.5 -34.4 1.5Z"/>
+                      <path d="M-29.2 -10Q0 -32 29.2 -10Q0 -20 -29.2 -10Z"/>
+                      <path d="M-24 -21.5Q0 -43.5 24 -21.5Q0 -31.5 -24 -21.5Z"/>
+                      <path d="M-18.8 -33Q0 -55 18.8 -33Q0 -43 -18.8 -33Z"/>
+                      <path d="M-13.6 -44.5Q0 -66.5 13.6 -44.5Q0 -54.5 -13.6 -44.5Z"/>
+                      <path d="M0-54C-11-61-9-72 0-66C9-72 11-61 0-54Z"/>
+                      <path d="M0-63V47" stroke="#f7ecdd" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                      <ellipse cx="0" cy="44" rx="14" ry="4.5" opacity=".9"/>
+                    </g>
+                    <circle cx="201" cy="191" r="72" fill="none" stroke="#2a170b" stroke-opacity=".55" stroke-width="3"/>
+                    <ellipse cx="176" cy="152" rx="24" ry="7" fill="#fff" opacity=".1" transform="rotate(-32 176 152)"/>
+                    <path d="M135 140A90 90 0 0 1 220 102" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+                  </svg>
+                  <div class="c-copy">
+                    <span class="c-kicker">Kaffeebar · Altstadt Wil</span>
+                    <h3>Der beste Kaffee <em>der Altstadt.</em></h3>
+                    <div class="c-cta"><span class="c-btn">Tisch reservieren</span><span class="c-ghost">Sonntagsbrunch</span></div>
+                    <span class="c-open">Heute offen bis 18:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="handle" aria-hidden="true"></div>
+            <span class="tag l">Vorher</span><span class="tag r">Nachher</span>
+            <input type="range" id="cut" min="0" max="100" value="38.2" step="0.1" aria-label="Vorher und Nachher vergleichen">
+          </div>
+        </div>
+        <figcaption class="cap"><span>← Ziehen zum Vergleichen →</span><span>Beispiel · Café Morgenrot ist erfunden</span></figcaption>
+      </figure>
+    </div>
   </div>
 </header>
 
@@ -346,30 +510,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="block" id="leistungen">
     <div class="wrap">
       <div class="head">
-        <div><span class="eyebrow">Leistungen</span><h2>Alles, was ein Geschäft online braucht. Aus einer Hand.</h2></div>
-        <p class="lead">Keine Agentur-Preise, keine monatelangen Projekte. Sie sagen, was Sie brauchen, und sehen innert 48 Stunden einen ersten Entwurf.</p>
+        <div><span class="eyebrow">Leistungen</span><h2>Alles, was ein Geschäft online braucht. <em class="s">Aus einer Hand.</em></h2></div>
+        <p class="lead">Keine Agentur-Preise, keine monatelangen Projekte. Sie sagen, was Sie brauchen, und sehen innert 24 Stunden einen ersten Entwurf.</p>
       </div>
       <div class="services">
         <div class="svc">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="9" width="38" height="28" rx="4"/><path d="M5 16h38M17 43h14M24 37v6"/><circle cx="10" cy="12.5" r="1" fill="currentColor"/></svg>
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="9" width="38" height="28" rx="4"/><path d="M5 16h38M17 43h14M24 37v6"/><circle cx="10" cy="12.5" r="1" fill="currentColor"/></svg>
           <h3>Websites</h3>
           <p>Schnell, auf dem Handy perfekt, bei Google gut auffindbar. Sie ändern Texte und Öffnungszeiten selbst oder lassen uns das machen.</p>
           <div class="price"><small>ab</small>Fr. 490.–</div>
         </div>
         <div class="svc">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3Z"/><path d="M15 21h.01M24 21h.01M33 21h.01" stroke-width="3" stroke-linecap="round"/></svg>
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3Z"/><path d="M15 21h.01M24 21h.01M33 21h.01" stroke-width="3" stroke-linecap="round"/></svg>
           <h3>Chatbots</h3>
           <p>Beantwortet Fragen zu Öffnungszeiten, Preisen und Terminen, auch um 23 Uhr am Sonntag. Weiter unten können Sie ihn ausprobieren.</p>
           <div class="price"><small>ab</small>Fr. 120.–</div>
         </div>
         <div class="svc">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5h18l8 8v30H12z"/><path d="M30 5v8h8M18 22h14M18 28h14M18 34h8"/></svg>
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5h18l8 8v30H12z"/><path d="M30 5v8h8M18 22h14M18 28h14M18 34h8"/></svg>
           <h3>Flyer &amp; Plakate</h3>
           <p>Für Aktionen, Events, Eröffnungen. Druckfertig als PDF, inklusive Texte.</p>
           <div class="price"><small>ab</small>Fr. 40.–</div>
         </div>
         <div class="svc">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="9"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.4" fill="currentColor"/></svg>
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="9"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.4" fill="currentColor"/></svg>
           <h3>Social-Media-Posts</h3>
           <p>Fünf Posts für Instagram und Facebook im Stil Ihres Geschäfts, mit passenden Texten.</p>
           <div class="price"><small>ab</small>Fr. 35.–</div>
@@ -378,12 +542,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </section>
 
-  <section class="block" id="demo" style="background:linear-gradient(180deg,transparent,rgba(18,28,25,.7) 30%,transparent)">
+  <section class="block demo-band" id="demo">
     <div class="wrap demo">
       <div>
         <span class="eyebrow">Live-Demo</span>
-        <h2 style="margin-top:18px">Fragen Sie den Chatbot. Er antwortet sofort.</h2>
-        <p class="lead" style="margin-top:22px">So würde er auf Ihrer Website arbeiten, hier am Beispiel eines Coiffeursalons in Wil. Er kennt nur die Informationen, die Sie ihm geben, und schickt Kunden bei allem anderen ans Telefon.</p>
+        <h2 style="margin-top:var(--s5)">Fragen Sie den Chatbot. <em class="s">Er antwortet sofort.</em></h2>
+        <p class="lead" style="margin-top:var(--s5)">So würde er auf Ihrer Website arbeiten, hier am Beispiel eines Coiffeursalons in Wil. Er kennt nur die Informationen, die Sie ihm geben, und schickt Kunden bei allem anderen ans Telefon.</p>
         <ul>
           <li><span><b>Weniger Telefonate</b> zu Öffnungszeiten, Preisen und Parkplätzen.</span></li>
           <li><span><b>Mehr Termine,</b> auch wenn das Geschäft geschlossen ist.</span></li>
@@ -395,7 +559,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="bar"><div class="av">CM</div><div><b>Coiffeur Muster · Wil</b><small>antwortet sofort</small></div></div>
           <div class="msgs" id="msgs" aria-live="polite"></div>
           <div class="quick" id="quick"></div>
-          <form class="composer" id="composer" style="background:#f4efe8;padding:12px 14px 14px;box-shadow:none;border-radius:0;display:flex;gap:8px">
+          <form class="composer" id="composer">
             <input id="ask" autocomplete="off" placeholder="Frage stellen, z. B. „Habt ihr am Samstag offen?“" aria-label="Frage an den Chatbot">
             <button type="submit" aria-label="Senden">↑</button>
           </form>
@@ -408,7 +572,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="block" id="pakete">
     <div class="wrap">
       <div class="head">
-        <div><span class="eyebrow">Pakete</span><h2>Einmal bauen. Danach entscheiden Sie.</h2></div>
+        <div><span class="eyebrow">Pakete</span><h2>Einmal bauen. <em class="s">Danach entscheiden Sie.</em></h2></div>
         <p class="lead">Sie verwalten die Website selbst, ohne laufende Kosten. Oder wir kümmern uns um alles. Wechseln geht jederzeit.</p>
       </div>
       <div class="toggle" role="group" aria-label="Nach dem Livegang">
@@ -421,7 +585,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="amt">490<small>Fr. einmalig</small></div>
           <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 39 Fr. pro Monat · Änderungen bis 30 Min., Backups, Updates">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
           <ul><li>Onepage-Website</li><li>Kontaktformular und Google Maps</li><li>Perfekt auf dem Handy</li><li>Impressum und Datenschutz-Vorlage</li></ul>
-          <a class="btn btn-ghost" href="#kontakt" data-pick="Start">Start wählen</a>
+          <a class="btn btn-line" href="#kontakt" data-pick="Start">Start wählen</a>
         </article>
         <article class="plan hot">
           <span class="badge">Am häufigsten passend</span>
@@ -429,14 +593,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="amt">890<small>Fr. einmalig</small></div>
           <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 39 Fr. pro Monat · Änderungen bis 30 Min., Backups, Updates">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
           <ul><li>Bis 5 Unterseiten</li><li>Bildergalerie</li><li>Google-Grundoptimierung</li><li>2 Korrekturrunden</li></ul>
-          <a class="btn btn-brass" href="#kontakt" data-pick="Business">Business wählen <span class="arr">→</span></a>
+          <a class="btn btn-go" href="#kontakt" data-pick="Business">Business wählen <span class="arr">→</span></a>
         </article>
         <article class="plan">
           <h3>Business Plus</h3>
           <div class="amt">1'390<small>Fr. einmalig</small></div>
           <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 79 Fr. pro Monat · Chatbot-Pflege, 2 Posts, Monatsbericht">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
           <ul><li>Bis 10 Unterseiten</li><li>Chatbot für Kundenfragen</li><li>Zwei Sprachen</li><li>2 Korrekturrunden</li></ul>
-          <a class="btn btn-ghost" href="#kontakt" data-pick="Business Plus">Plus wählen</a>
+          <a class="btn btn-line" href="#kontakt" data-pick="Business Plus">Plus wählen</a>
         </article>
       </div>
       <p class="plans-note">Dazu kommen nur Domain (ca. 15–20 Fr. pro Jahr) und, falls gewünscht, Hosting in der Schweiz. Domain, Hosting und Inhalte laufen auf Ihren Namen. Flyer ab 40 Fr., 5 Social-Media-Posts ab 35 Fr.</p>
@@ -446,12 +610,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="block" id="ablauf" style="padding-top:0">
     <div class="wrap">
       <div class="head">
-        <div><span class="eyebrow">Ablauf</span><h2>Von der ersten Nachricht zur fertigen Website.</h2></div>
+        <div><span class="eyebrow">Ablauf</span><h2>Von der ersten Nachricht <em class="s">zur fertigen Website.</em></h2></div>
         <p class="lead">Eine Onepage ist meist in einer Woche online, eine grössere Seite in zwei bis drei.</p>
       </div>
       <div class="steps">
         <div class="step"><div class="n">01</div><h3>Kurzes Gespräch</h3><p>20 Minuten am Telefon oder bei Ihnen: Was soll die Website können?</p><span class="t">Tag 1</span></div>
-        <div class="step"><div class="n">02</div><h3>Gratis-Entwurf</h3><p>Sie sehen Ihre Startseite, bevor Sie etwas bezahlen. Gefällt sie nicht, kostet es nichts.</p><span class="t">innert 48 Stunden</span></div>
+        <div class="step"><div class="n">02</div><h3>Gratis-Entwurf</h3><p>Sie sehen Ihre Startseite, bevor Sie etwas bezahlen. Gefällt sie nicht, kostet es nichts.</p><span class="t">innert 24 Stunden</span></div>
         <div class="step"><div class="n">03</div><h3>Bauen</h3><p>Texte, Bilder, Chatbot. Zwei Korrekturrunden sind inklusive.</p><span class="t">Woche 1–3</span></div>
         <div class="step"><div class="n">04</div><h3>Online</h3><p>Livegang, Übergabe mit Schulung oder Start der Betreuung.</p><span class="t">ab Woche 1</span></div>
       </div>
@@ -460,12 +624,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="block" style="padding-top:0">
     <div class="wrap faq">
-      <div><span class="eyebrow">Fragen</span><h2 style="margin-top:18px">Ehrlich beantwortet.</h2></div>
+      <div><span class="eyebrow">Fragen</span><h2 style="margin-top:var(--s5)">Ehrlich <em class="s">beantwortet.</em></h2></div>
       <div>
         <details open><summary>Wem gehört die Website?</summary><p>Ihnen. Domain, Hosting und Inhalte laufen von Anfang an auf Ihren Namen. Wenn Sie aufhören wollen, übergeben wir alles innert 5 Werktagen.</p></details>
         <details><summary>Kann ich Texte und Öffnungszeiten selbst ändern?</summary><p>Ja. Sie bekommen einen einfachen Editor im Browser, eine Anleitung und eine Stunde Schulung. Ohne Code, ohne Technikwissen.</p></details>
         <details><summary>Was kostet es nach dem Livegang?</summary><p>Wenn Sie selbst verwalten: nichts ausser der Domain (ca. 15–20 Fr. pro Jahr). Mit Betreuung ab 39 Fr. pro Monat, monatlich kündbar nach 3 Monaten.</p></details>
         <details><summary>Was passiert, wenn mir der Entwurf nicht gefällt?</summary><p>Dann ist das für Sie kostenlos. Bezahlt wird erst, wenn Sie die Offerte annehmen: 50 % zu Beginn, 50 % beim Livegang.</p></details>
+        <details><summary>Warum wirken Ihre Websites so stimmig?</summary><p>Abstände, Schriftgrössen und Flächen folgen dem Goldenen Schnitt (1 : 1,618), so passt alles im gleichen Verhältnis zusammen. Dazu kommt eine klare Farbführung: Nur die Knöpfe, auf die man klicken soll, tragen die warme Akzentfarbe. So findet das Auge den nächsten Schritt, ohne zu suchen.</p></details>
         <details><summary>Ist der Chatbot teuer im Betrieb?</summary><p>Der Standard-Chatbot arbeitet mit Ihren festen Fragen und Antworten und hat keine laufenden Kosten. Einen KI-Chatbot, der freier antwortet, gibt es auf Wunsch nach Absprache.</p></details>
       </div>
     </div>
@@ -475,22 +640,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="wrap cgrid">
       <div>
         <span class="eyebrow">Gratis-Entwurf</span>
-        <h2 class="big" style="margin-top:18px">Zeigen Sie mir Ihr Geschäft. Ich zeige Ihnen <em>Ihre neue Website.</em></h2>
-        <p class="lead" style="margin-top:24px">Füllen Sie das Formular aus. Daraus entsteht eine fertige Nachricht, die Sie mir per Mail oder WhatsApp schicken. Innert 48 Stunden haben Sie Ihren Entwurf.</p>
+        <h2 class="big" style="margin-top:var(--s5)">Zeigen Sie mir Ihr Geschäft. <em class="s">Ich zeige Ihnen Ihre neue Website.</em></h2>
+        <p class="lead" style="margin-top:var(--s5)">Füllen Sie das Formular aus. Daraus entsteht eine fertige Nachricht, die Sie mir per Mail oder WhatsApp schicken. Innert 24 Stunden haben Sie Ihren Entwurf.</p>
         <div class="direct">
           <div><span class="k">E-Mail</span><span id="mail">kabrane.studio@gmx.ch</span><button class="copy" type="button" data-copy="mail">Kopieren</button></div>
           <div><span class="k">Telefon</span><span id="tel">+41 78 265 18 06</span><button class="copy" type="button" data-copy="tel">Kopieren</button></div>
           <div><span class="k">Ort</span><span>Wil SG · Region Ostschweiz</span></div>
         </div>
       </div>
-      <form id="lead" novalidate>
+      <form class="leadform" id="lead" novalidate>
         <div class="f2">
           <label for="f-name">Ihr Name<input id="f-name" required autocomplete="name" placeholder="Maria Muster"></label>
           <label for="f-biz">Geschäft<input id="f-biz" required autocomplete="organization" placeholder="z. B. Coiffeur Muster, Wil"></label>
         </div>
         <label for="f-site">Bestehende Website (falls vorhanden)<input id="f-site" inputmode="url" placeholder="www.…"></label>
-        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:8px">
-          <legend style="font:500 13px var(--f-body);color:var(--mute);margin-bottom:7px;padding:0">Was brauchen Sie?</legend>
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:var(--s3)">
+          <legend style="font:500 13px var(--f-body);color:var(--mute);margin-bottom:var(--s3);padding:0">Was brauchen Sie?</legend>
           <div class="chips">
             <label><input type="checkbox" id="c-web" value="Website" checked><span>Website</span></label>
             <label><input type="checkbox" id="c-bot" value="Chatbot"><span>Chatbot</span></label>
@@ -500,11 +665,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </fieldset>
         <label for="f-plan">Paket<select id="f-plan"><option>Noch offen</option><option>Start</option><option>Business</option><option>Business Plus</option></select></label>
         <label for="f-msg">Worum geht es?<textarea id="f-msg" placeholder="Was soll die Website können? Was stört Sie an der jetzigen?"></textarea></label>
-        <button class="btn btn-brass" type="submit" style="justify-content:center">Anfrage erstellen <span class="arr">→</span></button>
+        <button class="btn btn-go" type="submit" style="justify-content:center">Anfrage erstellen <span class="arr">→</span></button>
         <div class="result" id="result" hidden>
           <p>Ihre Nachricht ist bereit. Kopieren Sie sie und schicken Sie sie an <b style="color:var(--paper)">kabrane.studio@gmx.ch</b> oder per WhatsApp an +41 78 265 18 06.</p>
           <pre id="out"></pre>
-          <button class="copy" type="button" id="copy-out" style="justify-self:start;padding:8px 12px">Nachricht kopieren</button>
+          <button class="copy" type="button" id="copy-out" style="justify-self:start;padding:8px 13px">Nachricht kopieren</button>
         </div>
       </form>
     </div>
@@ -518,82 +683,69 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const PHI = (1 + Math.sqrt(5)) / 2;
 
-  /* ---------- Höhenlinien (Marching Squares über ein weiches Wellenfeld) ---------- */
-  const cv = document.getElementById('topo');
-  const ctx = cv.getContext('2d');
-  let W = 0, H = 0, dpr = 1, t0 = performance.now(), visible = true, last = 0;
-  const STEP = 16, LEVELS = [-1.6, -1.0, -0.45, 0, 0.45, 1.0, 1.6];
-  function size() {
-    dpr = Math.min(devicePixelRatio || 1, 2);
-    W = cv.clientWidth; H = cv.clientHeight;
-    cv.width = W * dpr; cv.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  /* ---------- Goldene Spirale: läuft auf den Hauptknopf zu ---------- */
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('phi'), hero = document.querySelector('.hero'),
+        cta = document.getElementById('main-cta'), glow = document.getElementById('glow');
+  // Goldenes Rechteck (φ × 1) in Quadrate zerlegen; jedes Quadrat trägt einen Viertelkreis.
+  const unit = (() => {
+    let x = 0, y = 0, w = PHI, h = 1, d = 0, path = '';
+    const sq = [];
+    for (let i = 0; i < 13; i++) {
+      const s = Math.min(w, h); let a, b;
+      if (d === 0)      { sq.push([x, y, s]);           a = [x, y + s];   b = [x + s, y];       x += s; w -= s; }
+      else if (d === 1) { sq.push([x, y, s]);           a = [x, y];       b = [x + s, y + s];   y += s; h -= s; }
+      else if (d === 2) { sq.push([x + w - s, y, s]);   a = [x + w, y];   b = [x + w - s, y + s];        w -= s; }
+      else              { sq.push([x, y + h - s, s]);   a = [x + w, y + h]; b = [x, y + h - s];          h -= s; }
+      if (i === 0) path += 'M' + a.join(' ');
+      path += ' A' + s + ' ' + s + ' 0 0 1 ' + b.join(' ');
+      d = (d + 1) % 4;
+    }
+    return { sq, path, pole: [x + w / 2, y + h / 2] };
+  })();
+  const g = document.createElementNS(NS, 'g');
+  const frame = document.createElementNS(NS, 'rect');
+  frame.setAttribute('x', 0); frame.setAttribute('y', 0); frame.setAttribute('width', PHI); frame.setAttribute('height', 1);
+  frame.setAttribute('class', 'sq'); frame.setAttribute('vector-effect', 'non-scaling-stroke'); g.appendChild(frame);
+  unit.sq.slice(0, 9).forEach(([x, y, s]) => {
+    const r = document.createElementNS(NS, 'rect');
+    r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', s); r.setAttribute('height', s);
+    r.setAttribute('class', 'sq'); r.setAttribute('vector-effect', 'non-scaling-stroke'); g.appendChild(r);
+  });
+  const sp = document.createElementNS(NS, 'path');
+  sp.setAttribute('d', unit.path); sp.setAttribute('class', 'sp'); sp.setAttribute('pathLength', '1');
+  g.appendChild(sp);
+  svg.appendChild(g);
+  function placeSpiral() {
+    const hr = hero.getBoundingClientRect(), cr = cta.getBoundingClientRect();
+    const tx = cr.left - hr.left + cr.width / 2, ty = cr.top - hr.top + cr.height / 2;
+    const S = Math.max(hr.height * 1.0, Math.min(hr.width * .62, 980));
+    // gespiegelt, damit sich die Spirale nach rechts über Titel und Beispiel öffnet
+    g.setAttribute('transform', `translate(${tx} ${ty}) scale(${-S} ${S}) translate(${-unit.pole[0]} ${-unit.pole[1]})`);
+    sp.style.strokeWidth = (1.3 / S).toFixed(5);
+    glow.style.transform = `translate(${tx}px, ${ty}px)`;
   }
-  const field = (x, y, t) => {
-    const u = x / 260, v = y / 260;
-    return Math.sin(u * 1.3 + t * .07) + Math.sin(v * 1.7 - t * .05 + u * .4)
-         + .8 * Math.sin((u + v) * 1.1 + t * .04) + .6 * Math.sin(u * 2.3 - v * 1.4 - t * .03);
-  };
-  function draw(now) {
-    const t = (now - t0) / 1000;
-    ctx.clearRect(0, 0, W, H);
-    const cols = Math.ceil(W / STEP) + 1, rows = Math.ceil(H / STEP) + 1;
-    const g = new Float32Array(cols * rows);
-    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) g[j * cols + i] = field(i * STEP, j * STEP, t);
-    LEVELS.forEach((lv, k) => {
-      const major = k === 3;
-      ctx.strokeStyle = major ? 'rgba(214,176,114,.34)' : 'rgba(214,176,114,' + (0.08 + 0.03 * (3 - Math.abs(3 - k))) + ')';
-      ctx.lineWidth = major ? 1.2 : 0.8;
-      ctx.beginPath();
-      for (let j = 0; j < rows - 1; j++) for (let i = 0; i < cols - 1; i++) {
-        const a = g[j * cols + i], b = g[j * cols + i + 1], c = g[(j + 1) * cols + i + 1], d = g[(j + 1) * cols + i];
-        const idx = (a > lv) | ((b > lv) << 1) | ((c > lv) << 2) | ((d > lv) << 3);
-        if (idx === 0 || idx === 15) continue;
-        const x = i * STEP, y = j * STEP;
-        const lerp = (p, q) => (lv - p) / (q - p);
-        const T = [x + STEP * lerp(a, b), y], R = [x + STEP, y + STEP * lerp(b, c)],
-              B = [x + STEP * lerp(d, c), y + STEP], L = [x, y + STEP * lerp(a, d)];
-        const seg = (p, q) => { ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); };
-        switch (idx) {
-          case 1: case 14: seg(L, T); break;
-          case 2: case 13: seg(T, R); break;
-          case 3: case 12: seg(L, R); break;
-          case 4: case 11: seg(R, B); break;
-          case 5: seg(L, T); seg(R, B); break;
-          case 6: case 9: seg(T, B); break;
-          case 7: case 8: seg(L, B); break;
-          case 10: seg(T, R); seg(L, B); break;
-        }
-      }
-      ctx.stroke();
-    });
-  }
-  function loop(now) {
-    if (visible && now - last > 50) { draw(now); last = now; }
-    requestAnimationFrame(loop);
-  }
-  size(); draw(performance.now());
-  addEventListener('resize', () => { size(); draw(performance.now()); });
-  if (!reduce) {
-    new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(cv);
-    requestAnimationFrame(loop);
-  }
+  placeSpiral();
+  addEventListener('resize', placeSpiral);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeSpiral);
+  if (!reduce) svg.classList.add('draw');
 
   /* ---------- Vorher / Nachher ---------- */
   const stage = document.getElementById('stage'), cut = document.getElementById('cut');
   const setCut = v => stage.style.setProperty('--cut', v + '%');
   cut.addEventListener('input', () => setCut(cut.value));
-  if (!reduce) {             // einmal kurz zeigen, dass man ziehen kann
+  if (!reduce) {             // einmal zeigen, dass man ziehen kann
     let start = null;
     const sweep = ts => {
       if (start === null) start = ts;
-      const p = Math.min((ts - start) / 2200, 1);
-      const v = 34 + Math.sin(p * Math.PI * 2) * 22 * (1 - p);
+      const p = Math.min((ts - start) / 2600, 1);
+      const v = 38.2 + Math.sin(p * Math.PI * 2) * 23.6 * (1 - p);
       if (document.activeElement !== cut) { setCut(v.toFixed(1)); cut.value = v; }
       if (p < 1) requestAnimationFrame(sweep);
     };
-    setTimeout(() => requestAnimationFrame(sweep), 900);
+    setTimeout(() => requestAnimationFrame(sweep), 1300);
   }
 
   /* ---------- Chatbot ---------- */
@@ -678,7 +830,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     e.preventDefault();
     const name = document.getElementById('f-name'), biz = document.getElementById('f-biz');
     for (const el of [name, biz]) {
-      if (!el.value.trim()) { el.focus(); el.style.borderColor = 'var(--brass)'; el.placeholder = 'Bitte ausfüllen'; return; }
+      if (!el.value.trim()) { el.focus(); el.style.borderColor = 'var(--champagne)'; el.placeholder = 'Bitte ausfüllen'; return; }
     }
     const needs = [...form.querySelectorAll('.chips input:checked')].map(i => i.value).join(', ') || 'noch offen';
     const site = document.getElementById('f-site').value.trim();
@@ -701,5 +853,6 @@ ${name.value.trim()}`;
   document.getElementById('copy-out').addEventListener('click', e => copyText(out.textContent, e.currentTarget));
 })();
 </script>
+
 </body>
 </html>
