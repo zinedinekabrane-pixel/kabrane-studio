@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Kabrane Studio aus Wil SG: schnelle, schöne Websites, Chatbots, Flyer und Social-Media-Posts für Geschäfte in der Ostschweiz. Gratis-Entwurf in 24 Stunden.">
+<meta name="description" content="Kabra Ostschweiz (früher Kabrane Studio) aus Wil SG: schnelle, schöne Websites, Chatbots, Flyer und Social-Media-Posts für Geschäfte in der Ostschweiz. Gratis-Entwurf in 24 Stunden.">
 <meta name="theme-color" content="#faf8f4">
-<meta property="og:title" content="Kabrane Studio – Websites aus Wil SG">
+<meta property="og:title" content="Kabra Ostschweiz – Websites aus Wil SG">
 <meta property="og:description" content="Websites, Chatbots und Flyer für Geschäfte in der Ostschweiz. Gratis-Entwurf in 24 Stunden.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23faf8f4'/%3E%3Crect x='3' y='9' width='26' height='16' rx='3' fill='none' stroke='%23c8a36a' stroke-width='1.6'/%3E%3Cpath d='M13 25A10 10 0 0 1 3 15M13 9a6 6 0 0 0 6 6' fill='none' stroke='%2313231f' stroke-width='1.8'/%3E%3C/svg%3E">
-<title>Kabrane Studio</title>
+<title>Kabra Ostschweiz</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -346,6 +346,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s5);flex-wrap:
   .plan{padding:var(--s6) var(--s5)}
   .show-bar .note{margin-left:0}
 }
+/* Bewertungen */
+.rv{display:grid;gap:var(--s7,48px);grid-template-columns:1fr;align-items:start}
+@media (min-width:900px){.rv{grid-template-columns:1fr 1fr}}
+.rv-list{display:grid;gap:var(--s4);margin-top:var(--s6)}
+.rv-card{padding:var(--s5);border-radius:var(--r2);background:var(--card);box-shadow:0 0 0 1px var(--line)}
+.rv-card .st{color:var(--brass);letter-spacing:2px;font-size:18px}
+.rv-card p{margin:var(--s3) 0}
+.rv-card .who{font:500 13px var(--f-body);color:var(--mute)}
+.rv-empty{padding:var(--s5);border-radius:var(--r2);border:1px dashed var(--line);color:var(--mute)}
+.stars{border:0;padding:0;margin:0}
+.stars legend{font:500 13px var(--f-body);color:var(--mute);margin-bottom:var(--s3);padding:0}
+.stars-row{display:inline-flex;flex-direction:row-reverse;gap:4px}
+.stars-row input{position:absolute;opacity:0;width:1px;height:1px}
+.stars-row label{font-size:34px;line-height:1;color:var(--brass);opacity:.22;cursor:pointer;transition:transform .15s,opacity .15s}
+.stars-row label:hover,.stars-row label:hover~label,.stars-row input:checked~label{opacity:1}
+.stars-row label:hover{transform:scale(1.15)}
+.stars-row input:focus-visible+label{outline:2px solid var(--cta);outline-offset:2px;border-radius:4px}
+.rv-ok{display:flex!important;gap:var(--s3);align-items:flex-start;font-size:14px}
+.rv-ok input{width:18px!important;height:18px;flex:none;margin-top:2px;appearance:auto;-webkit-appearance:checkbox;accent-color:var(--cta)}
+.renamed{display:inline-block;margin:0 0 var(--s5);padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:500 13px/1.4 var(--f-body);color:var(--mute)}
+.renamed b{color:var(--ink);font-weight:600}
 
 /* =====================================================================
    SIEBEN DESIGNS, EINE WEBSITE
@@ -1048,9 +1069,9 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
 <div id="page">
 <nav class="nav" aria-label="Hauptnavigation">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Kabrane Studio, nach oben">
+    <a class="brand" href="#top" aria-label="Kabra Ostschweiz, nach oben">
       <svg viewBox="0 0 34 21" aria-hidden="true"><rect x=".75" y=".75" width="32.5" height="19.5" rx="4" fill="none" stroke="#b0844a" stroke-width="1.5"/><path d="M13.75 .75v19.5M13.75 8.2h19.5" stroke="#b0844a" stroke-width="1" opacity=".55"/><path d="M13.75 20.25A13 13 0 0 1 .75 7.25" fill="none" stroke="#13231f" stroke-width="1.6"/><path d="M13.75 .75a8 8 0 0 0 8 7.45" fill="none" stroke="#13231f" stroke-width="1.6"/></svg>
-      Kabrane Studio
+      Kabra Ostschweiz
     </a>
     <ul>
       <li><a href="#leistungen">Leistungen</a></li>
@@ -1065,9 +1086,10 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
 
 <header class="hero" id="top">
   <svg id="phi" aria-hidden="true"></svg>
-  <div class="wrap" data-title="Kabrane Studio – Startseite.htm">
+  <div class="wrap" data-title="Kabra Ostschweiz – Startseite.htm">
     <div class="hero-head">
       <div>
+        <p class="renamed">Neuer Name: <b>Kabra Ostschweiz</b> – früher Kabrane Studio. Gleicher Ansprechpartner: Zinédine Kabrane.</p>
         <span class="eyebrow rise">Websites · Chatbots · Flyer · aus Wil SG</span>
         <h1 class="rise d1">Aus Ihrer alten Website wird eine, <em class="s">die verkauft.</em></h1>
       </div>
@@ -1305,6 +1327,44 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
     </div>
   </section>
 
+  <section class="block" id="bewertungen">
+    <div class="wrap rv" data-title="Bewertungen.txt">
+      <div>
+        <span class="eyebrow">Bewertungen</span>
+        <h2 style="margin-top:var(--s5)">Was Kunden <em class="s">sagen.</em></h2>
+        <p class="lead" style="margin-top:var(--s5)">Hier stehen nur Bewertungen von echten Kundinnen und Kunden. Jede wird vor dem Aufschalten geprüft.</p>
+        <div class="rv-list" id="rv-list" aria-live="polite"></div>
+      </div>
+      <form class="leadform rv-form" id="rv" novalidate>
+        <fieldset class="stars" id="rv-stars">
+          <legend>Ihre Bewertung</legend>
+          <div class="stars-row">
+            <input type="radio" name="rv-s" id="rv-s5" value="5"><label for="rv-s5" title="5 Sterne">★</label>
+            <input type="radio" name="rv-s" id="rv-s4" value="4"><label for="rv-s4" title="4 Sterne">★</label>
+            <input type="radio" name="rv-s" id="rv-s3" value="3"><label for="rv-s3" title="3 Sterne">★</label>
+            <input type="radio" name="rv-s" id="rv-s2" value="2"><label for="rv-s2" title="2 Sterne">★</label>
+            <input type="radio" name="rv-s" id="rv-s1" value="1"><label for="rv-s1" title="1 Stern">★</label>
+          </div>
+        </fieldset>
+        <div class="f2">
+          <label for="rv-name">Ihr Name<input id="rv-name" required autocomplete="name" placeholder="Maria M."></label>
+          <label for="rv-biz">Geschäft und Ort<input id="rv-biz" autocomplete="organization" placeholder="z. B. Coiffeur Muster, Wil"></label>
+        </div>
+        <label for="rv-text">Ihre Erfahrung<textarea id="rv-text" required placeholder="Was hat Ihnen gefallen? Was könnte besser sein?"></textarea></label>
+        <label class="rv-ok"><input type="checkbox" id="rv-ok"> <span>Meine Bewertung darf mit Namen und Geschäft auf dieser Website erscheinen.</span></label>
+        <button class="btn btn-go" type="submit" style="justify-content:center">Bewertung erstellen <span class="arr">→</span></button>
+        <div class="result" id="rv-result" hidden>
+          <p>Danke! Schicken Sie die Bewertung mit einem Klick per Mail. Sobald sie geprüft ist, erscheint sie hier.</p>
+          <pre id="rv-out"></pre>
+          <div style="display:flex;gap:var(--s3);flex-wrap:wrap">
+            <a class="btn btn-go" id="rv-mail" href="#" style="padding:10px 16px">Per Mail senden <span class="arr">→</span></a>
+            <button class="copy" type="button" id="rv-copy" style="padding:8px 13px">Text kopieren</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <section class="block" style="padding-top:0">
     <div class="wrap faq" data-title="Fragen und Antworten.txt">
       <div><span class="eyebrow">Fragen</span><h2 style="margin-top:var(--s5)">Ehrlich <em class="s">beantwortet.</em></h2></div>
@@ -1360,7 +1420,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
 </main>
 
 <footer>
-  <div class="wrap"><span>© 2026 Kabrane Studio · Zinédine Kabrane · Wil SG</span><span>Probe-Website · Beispiele (Café Morgenrot, Coiffeur Muster) sind erfunden</span></div>
+  <div class="wrap"><span>© 2026 Kabra Ostschweiz (früher Kabrane Studio) · Zinédine Kabrane · Wil SG</span><span>Probe-Website · Beispiele (Café Morgenrot, Coiffeur Muster) sind erfunden</span></div>
 </footer>
 </div>
 <canvas id="fx" aria-hidden="true"></canvas>
@@ -1374,7 +1434,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
   <div class="tb-tray"><span class="vol" aria-hidden="true"></span><span id="tb-clock">12:00</span></div>
 </div>
 <nav class="startmenu" id="startmenu" hidden aria-label="Startmenü">
-  <div class="sm-side" aria-hidden="true">Kabrane<b>95</b></div>
+  <div class="sm-side" aria-hidden="true">Kabra<b>95</b></div>
   <ul>
     <li><a href="#leistungen" style="--ic:#ffd000">Leistungen</a></li>
     <li><a href="#demo" style="--ic:#00a0ff">Chatbot-Demo</a></li>
@@ -1586,6 +1646,42 @@ ${name.value.trim()}`;
     result.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
   });
   document.getElementById('copy-out').addEventListener('click', e => copyText(out.textContent, e.currentTarget));
+  /* ---------- Bewertungen ---------- */
+  const REVIEWS = [
+    /* Echte, geprüfte Bewertungen hier eintragen:
+       { s: 5, text: '…', name: 'Maria M.', biz: 'Coiffeur Muster, Wil' }, */
+  ];
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const rvList = document.getElementById('rv-list');
+  rvList.innerHTML = REVIEWS.length
+    ? REVIEWS.map(r => `<article class="rv-card"><div class="st" aria-label="${r.s} von 5 Sternen">${'★'.repeat(r.s)}${'☆'.repeat(5 - r.s)}</div><p>«${esc(r.text)}»</p><div class="who">${esc(r.name)}${r.biz ? ' · ' + esc(r.biz) : ''}</div></article>`).join('')
+    : '<div class="rv-empty">Noch keine Bewertungen. Sie waren schon Kundin oder Kunde? Dann freue ich mich über Ihre ehrliche Meinung.</div>';
+  const rv = document.getElementById('rv'), rvOut = document.getElementById('rv-out'), rvRes = document.getElementById('rv-result');
+  rv.addEventListener('submit', e => {
+    e.preventDefault();
+    const st = rv.querySelector('input[name="rv-s"]:checked');
+    const nm = document.getElementById('rv-name'), tx = document.getElementById('rv-text');
+    if (!st) { document.getElementById('rv-stars').querySelector('legend').textContent = 'Bitte Sterne wählen'; document.getElementById('rv-s5').focus(); return; }
+    for (const el of [nm, tx]) {
+      if (!el.value.trim()) { el.focus(); el.style.borderColor = 'var(--cta)'; el.placeholder = 'Bitte ausfüllen'; return; }
+    }
+    const biz = document.getElementById('rv-biz').value.trim();
+    const ok = document.getElementById('rv-ok').checked;
+    rvOut.textContent =
+`Bewertung für Zinédine Kabrane
+
+Sterne: ${'★'.repeat(+st.value)}${'☆'.repeat(5 - st.value)} (${st.value} von 5)
+Name: ${nm.value.trim()}
+${biz ? 'Geschäft: ' + biz + '\n' : ''}
+${tx.value.trim()}
+
+Veröffentlichen erlaubt: ${ok ? 'Ja' : 'Nein'}`;
+    const to = document.getElementById('mail').textContent.trim();
+    document.getElementById('rv-mail').href = 'mailto:' + to + '?subject=' + encodeURIComponent('Bewertung von ' + nm.value.trim()) + '&body=' + encodeURIComponent(rvOut.textContent);
+    rvRes.hidden = false;
+    rvRes.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+  });
+  document.getElementById('rv-copy').addEventListener('click', e => copyText(rvOut.textContent, e.currentTarget));
 })();
 </script>
 <script>
@@ -1602,7 +1698,7 @@ ${name.value.trim()}`;
 
   const THEMES = [
     { id: 'base', name: 'Original', tag: 'Warm, ruhig, Goldener Schnitt', c: ['#faf8f4', '#13231f', '#ff7a45', '#163a32'],
-      hint: 'Warm, ruhig und im Goldenen Schnitt. So sieht Kabrane Studio normalerweise aus.' },
+      hint: 'Warm, ruhig und im Goldenen Schnitt. So sieht Kabra Ostschweiz normalerweise aus.' },
     { id: 'neon', name: 'Neon', tag: 'Cyber-Nacht', c: ['#07050f', '#f3ecff', '#ff2bd6', '#00f0ff'], font: '700 40px "Chakra Petch"',
       hint: fine ? 'Bewegen Sie die Maus, klicken Sie irgendwo hin und fahren Sie über die Überschriften.' : 'Tippen Sie irgendwo hin: Funken!' },
     { id: 'bonbon', name: 'Bonbon', tag: 'Weich und verspielt', c: ['#fff0f6', '#3d1846', '#ff4f9a', '#8d4bff'], font: '600 40px Fredoka',
@@ -1640,7 +1736,7 @@ ${name.value.trim()}`;
   $$('.svc,.plan,.phone,form.leadform').forEach(w => {
     let name;
     if (w.matches('.phone')) name = 'Chatbot.exe';
-    else if (w.matches('form')) name = 'Anfrage.txt';
+    else if (w.matches('form')) name = w.id === 'rv' ? 'Bewertung.txt' : 'Anfrage.txt';
     else if (w.matches('.plan')) name = 'Paket ' + w.querySelector('h3').textContent.trim();
     else name = w.querySelector('h3').textContent.trim().replace(/\s+/g, ' ') + '.exe';
     const bar = document.createElement('div');
@@ -1952,7 +2048,7 @@ ${name.value.trim()}`;
   document.addEventListener('dragstart', e => { if (T() === 'bonbon') e.preventDefault(); });
 
   /* ---------- Zeitung: Stempel ---------- */
-  const STAMPS = [['Geprüft', 'Kabrane Studio'], ['Gratis', 'Entwurf in 24 h'], ['Top!', 'Wil SG'], ['Neu', 'Ausgabe Nr. 1'], ['Bestellt', 'ab Fr. 490.–'], ['Wow', 'Redaktion']];
+  const STAMPS = [['Geprüft', 'Kabra Ostschweiz'], ['Gratis', 'Entwurf in 24 h'], ['Top!', 'Wil SG'], ['Neu', 'Ausgabe Nr. 1'], ['Bestellt', 'ab Fr. 490.–'], ['Wow', 'Redaktion']];
   let stampN = 0;
   function stamp(e) {
     const s = document.createElement('div');
