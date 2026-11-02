@@ -211,7 +211,10 @@ section.block{padding-block:clamp(var(--s8),11vw,var(--s9));position:relative}
 .head .eyebrow{display:block;margin-bottom:var(--s5)}
 
 /* Leistungen */
-.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s5)}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.svc{position:relative}
+.svc .tag{position:absolute;top:var(--s5);right:var(--s5);font:500 11.5px var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--brass);border:1px solid currentColor;border-radius:999px;padding:3px 9px}
+.svc.feat{box-shadow:0 0 0 2px var(--pine)}
 .svc{display:flex;flex-direction:column;gap:var(--s4);padding:var(--s6) var(--s5) var(--s5);border-radius:var(--r2);background:var(--card);box-shadow:0 0 0 1px var(--line);transition:transform .4s var(--ease),box-shadow .4s}
 .svc:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(19,35,31,.18),0 34px 55px -34px rgba(19,35,31,.35)}
 .svc .ico{width:55px;height:55px;border-radius:var(--r2);display:grid;place-items:center;background:var(--bg-2);color:var(--pine)}
@@ -620,6 +623,8 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
 [data-theme="bonbon"] .svc:nth-child(2),[data-theme="bonbon"] .plan:nth-child(3),[data-theme="bonbon"] .step:nth-child(1){--c:#ffe27a}
 [data-theme="bonbon"] .svc:nth-child(3),[data-theme="bonbon"] .step:nth-child(3){--c:#cdb5ff}
 [data-theme="bonbon"] .svc:nth-child(4),[data-theme="bonbon"] form.leadform,[data-theme="bonbon"] .step:nth-child(4){--c:#ffb8a3}
+[data-theme="bonbon"] .svc:nth-child(5){--c:#a8dcff}
+[data-theme="bonbon"] .svc:nth-child(6){--c:#ffc7e6}
 [data-theme="bonbon"] .svc:hover,[data-theme="bonbon"] .plan:hover{transform:translateY(-7px) rotate(-1.6deg);box-shadow:0 0 0 2.5px var(--ink),12px 13px 0 var(--c,#cdb5ff)}
 [data-theme="bonbon"] .svc:nth-child(even):hover,[data-theme="bonbon"] .plan:nth-child(even):hover{transform:translateY(-7px) rotate(1.6deg)}
 [data-theme="bonbon"] .svc .ico{background:var(--c);color:var(--ink);border-radius:50%;box-shadow:0 0 0 2.5px var(--ink);transition:transform .6s cubic-bezier(.3,1.9,.5,1)}
@@ -792,6 +797,8 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
 [data-theme="tiefsee"] .svc:nth-child(2),[data-theme="tiefsee"] .plan:nth-child(2){animation-delay:-1.75s}
 [data-theme="tiefsee"] .svc:nth-child(3),[data-theme="tiefsee"] .plan:nth-child(3){animation-delay:-3.5s}
 [data-theme="tiefsee"] .svc:nth-child(4){animation-delay:-5.25s}
+[data-theme="tiefsee"] .svc:nth-child(5){animation-delay:-2.6s}
+[data-theme="tiefsee"] .svc:nth-child(6){animation-delay:-4.4s}
 @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -9px}}
 [data-theme="tiefsee"] .svc:hover,[data-theme="tiefsee"] .plan:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 0 1px rgba(60,242,210,.55),0 0 55px rgba(60,242,210,.2),0 34px 55px -34px rgba(0,0,0,.7);transition:transform .15s linear,box-shadow .3s}
 [data-theme="tiefsee"] .svc .ico{background:rgba(60,242,210,.1);color:#3cf2d2;border-radius:50%;box-shadow:0 0 21px rgba(60,242,210,.25)}
@@ -1058,6 +1065,8 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
   .tb-tray .vol{display:none}
 }
 
+[data-theme="retro"] .svc .tag{position:static;align-self:flex-start;border-radius:0}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -1082,7 +1091,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
     <a class="btn btn-go" href="#kontakt"><span class="long">Gratis-Entwurf</span><span class="arr">→</span></a>
   </div>
 </nav>
-<div class="ticker" aria-hidden="true"><div class="tk-in"><b>+++</b><span>Gratis-Entwurf in 24 Stunden</span><b>+++</b><span>Websites ab Fr. 490.–</span><b>+++</b><span>Chatbots ab Fr. 120.–</span><b>+++</b><span>Flyer ab Fr. 40.–</span><b>+++</b><span>Aus Wil SG für die Ostschweiz</span><b>+++</b><span>Die Website gehört Ihnen</span><b>+++</b><span>5 Social-Media-Posts ab Fr. 35.–</span><b>+++</b><span>Gratis-Entwurf in 24 Stunden</span><b>+++</b><span>Websites ab Fr. 490.–</span><b>+++</b><span>Chatbots ab Fr. 120.–</span><b>+++</b><span>Flyer ab Fr. 40.–</span><b>+++</b><span>Aus Wil SG für die Ostschweiz</span><b>+++</b><span>Die Website gehört Ihnen</span><b>+++</b><span>5 Social-Media-Posts ab Fr. 35.–</span></div></div>
+<div class="ticker" aria-hidden="true"><div class="tk-in"><b>+++</b><span>Website-Betreuung ab Fr. 39.– pro Monat</span><b>+++</b><span>Gratis-Entwurf in 24 Stunden</span><b>+++</b><span>Online-Check: Kurzcheck gratis</span><b>+++</b><span>Websites und Überarbeitungen ab Fr. 490.–</span><b>+++</b><span>Chatbots ab Fr. 120.–</span><b>+++</b><span>Flyer ab Fr. 40.–</span><b>+++</b><span>Aus Wil SG für die Ostschweiz</span><b>+++</b><span>Die Website gehört Ihnen</span><b>+++</b><span>5 Social-Media-Posts ab Fr. 35.–</span><b>+++</b><span>Website-Betreuung ab Fr. 39.– pro Monat</span><b>+++</b><span>Gratis-Entwurf in 24 Stunden</span><b>+++</b><span>Online-Check: Kurzcheck gratis</span><b>+++</b><span>Websites und Überarbeitungen ab Fr. 490.–</span><b>+++</b><span>Chatbots ab Fr. 120.–</span><b>+++</b><span>Flyer ab Fr. 40.–</span><b>+++</b><span>Aus Wil SG für die Ostschweiz</span><b>+++</b><span>Die Website gehört Ihnen</span><b>+++</b><span>5 Social-Media-Posts ab Fr. 35.–</span></div></div>
 
 <header class="hero" id="top">
   <svg id="phi" aria-hidden="true"></svg>
@@ -1216,29 +1225,42 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
     <div class="wrap" data-title="Leistungen">
       <div class="head">
         <div><span class="eyebrow">Leistungen</span><h2>Alles, was ein Geschäft online braucht. <em class="s">Aus einer Hand.</em></h2></div>
-        <p class="lead">Keine Agentur-Preise, keine monatelangen Projekte. Sie sagen, was Sie brauchen, und sehen innert 24 Stunden einen ersten Entwurf.</p>
+        <p class="lead">Keine Agentur-Preise, keine monatelangen Projekte. Sie sagen, was Sie brauchen, und sehen innert 24 Stunden einen ersten Entwurf. Auf Wunsch kümmern wir uns danach laufend um Ihre Website.</p>
       </div>
       <div class="services">
+        <div class="svc feat">
+          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="38" height="30" rx="4"/><path d="M5 15h38"/><circle cx="10" cy="11.5" r=".6" fill="currentColor"/><circle cx="14" cy="11.5" r=".6" fill="currentColor"/><path d="M31 25.5a7 7 0 0 1-12.3 4.6M17 23.5a7 7 0 0 1 12.3-4.6"/><path d="M29.6 15.6v3.6h-3.6M18.4 33.4v-3.6H22"/><path d="M17 43h14"/></svg></div>
+          <span class="tag">Rundum betreut</span>
+          <h3>Website-Betreuung</h3>
+          <p>Sie haben keine Zeit für die Website? Wir übernehmen Änderungen bis 30 Minuten pro Monat, Backups und Updates und schicken Ihnen jeden Monat einen kurzen Bericht. Monatlich kündbar nach 3 Monaten.</p>
+          <div class="price"><small>ab</small>Fr. 39.– <small>pro Monat</small></div>
+        </div>
         <div class="svc">
-          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="9" width="38" height="28" rx="4"/><path d="M5 16h38M17 43h14M24 37v6"/></svg></div>
-          <h3>Websites</h3>
-          <p>Schnell, auf dem Handy perfekt, bei Google gut auffindbar. Sie ändern Texte und Öffnungszeiten selbst oder lassen uns das machen.</p>
+          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="34" height="27" rx="4"/><path d="M4 14h34M10 20h11M10 25h7M26 20h6v8h-6z"/><path d="M42.5 22.5l3 3L32 39l-4.2 1.2L29 36z"/><path d="M39.6 25.4l3 3"/></svg></div>
+          <h3>Websites &amp; Überarbeitungen</h3>
+          <p>Neue Website oder Überarbeitung Ihrer bestehenden: schnell, auf dem Handy perfekt, bei Google gut auffindbar.</p>
           <div class="price"><small>ab</small>Fr. 490.–</div>
         </div>
         <div class="svc">
-          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3Z"/><path d="M15 21h.01M24 21h.01M33 21h.01" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 40h22"/><path d="M10 34V26M16 34V20M22 34V24"/><circle cx="31" cy="17" r="9"/><path d="M27 18.5l3 3 5.5-6.5"/><path d="M37.5 23.5L44 30"/></svg></div>
+          <h3>Online-Check</h3>
+          <p>Wir prüfen Website, Google-Profil, Bewertungen und Social Media und vergleichen Sie mit der Konkurrenz in Ihrer Nähe. Sie bekommen eine klare Liste, was zu tun ist.</p>
+          <div class="price"><small>Kurzcheck</small>gratis <small>· ausführlich ab</small>Fr. 49.–</div>
+        </div>
+        <div class="svc">
+          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12h30a4 4 0 0 1 4 4v15a4 4 0 0 1-4 4H23l-9 7v-7H9a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z"/><path d="M24 12V7"/><circle cx="24" cy="5.5" r="1.5"/><rect x="14" y="19" width="20" height="10" rx="4"/><circle cx="20" cy="24" r="1.2" fill="currentColor"/><circle cx="28" cy="24" r="1.2" fill="currentColor"/></svg></div>
           <h3>Chatbots</h3>
           <p>Beantwortet Fragen zu Öffnungszeiten, Preisen und Terminen, auch um 23 Uhr am Sonntag. Weiter unten können Sie ihn ausprobieren.</p>
           <div class="price"><small>ab</small>Fr. 120.–</div>
         </div>
         <div class="svc">
-          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5h18l8 8v30H12z"/><path d="M30 5v8h8M18 22h14M18 28h14M18 34h8"/></svg></div>
+          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6h21l5 5v27"/><rect x="7" y="11" width="28" height="32" rx="2"/><path d="M11 30l6-7 5 5 3-3 6 5"/><circle cx="26" cy="18" r="2.2"/><path d="M12 35h18M12 39h11"/></svg></div>
           <h3>Flyer &amp; Plakate</h3>
           <p>Für Aktionen, Events und Eröffnungen. Druckfertig als PDF, inklusive Texte.</p>
           <div class="price"><small>ab</small>Fr. 40.–</div>
         </div>
         <div class="svc">
-          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="9"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.6" fill="currentColor"/></svg></div>
+          <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="24" height="39" rx="5"/><path d="M15 9.5h6"/><path d="M18 29s-6.5-3.9-6.5-8.2a3.4 3.4 0 0 1 6.5-1.5 3.4 3.4 0 0 1 6.5 1.5c0 4.3-6.5 8.2-6.5 8.2Z"/><path d="M13 36h10"/><path d="M35 4h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-3.5 3.5V15H35a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M37 9.5h4"/></svg></div>
           <h3>Social-Media-Posts</h3>
           <p>Fünf Posts für Instagram und Facebook im Stil Ihres Geschäfts, mit passenden Texten.</p>
           <div class="price"><small>ab</small>Fr. 35.–</div>
@@ -1288,7 +1310,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
         <article class="plan">
           <h3>Start</h3>
           <div class="amt">490<small>Fr. einmalig</small></div>
-          <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 39 Fr. pro Monat · Änderungen bis 30 Min., Backups, Updates">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
+          <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 39 Fr. pro Monat · Änderungen bis 30 Min., Backups, Updates, Monatsbericht">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
           <ul><li>Onepage-Website</li><li>Kontaktformular und Google Maps</li><li>Perfekt auf dem Handy</li><li>Impressum und Datenschutz-Vorlage</li></ul>
           <a class="btn btn-line" href="#kontakt" data-pick="Start">Start wählen</a>
         </article>
@@ -1296,7 +1318,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
           <span class="badge">Am häufigsten passend</span>
           <h3>Business</h3>
           <div class="amt">890<small>Fr. einmalig</small></div>
-          <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 39 Fr. pro Monat · Änderungen bis 30 Min., Backups, Updates">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
+          <div class="then" data-self="Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive" data-care="Danach 39 Fr. pro Monat · Änderungen bis 30 Min., Backups, Updates, Monatsbericht">Danach 0 Fr. pro Monat · Schulung und Anleitung inklusive</div>
           <ul><li>Bis 5 Unterseiten</li><li>Bildergalerie</li><li>Google-Grundoptimierung</li><li>2 Korrekturrunden</li></ul>
           <a class="btn btn-go" href="#kontakt" data-pick="Business">Business wählen <span class="arr">→</span></a>
         </article>
