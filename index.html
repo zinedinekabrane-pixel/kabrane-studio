@@ -221,6 +221,10 @@ section.block{padding-block:clamp(var(--s8),11vw,var(--s9));position:relative}
 .svc.feat{box-shadow:0 0 0 2px var(--pine)}
 .tiers-open{align-self:flex-start;background:none;border:0;padding:4px 0;font:600 14.5px/1.4 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-color:var(--brass);text-decoration-thickness:1.5px;text-underline-offset:5px;cursor:pointer}
 .tiers-open:hover{text-decoration-thickness:2.5px}
+.svc-more{align-self:flex-start;padding:4px 0;font:600 14.5px/1.4 var(--f-body);color:var(--ink);text-decoration:underline;text-decoration-color:var(--brass);text-decoration-thickness:1.5px;text-underline-offset:5px}
+.svc-more:hover{text-decoration-thickness:2.5px}
+footer .wrap.foot-links{justify-content:flex-start;gap:6px 18px;margin-bottom:var(--s4);padding-bottom:var(--s4);border-bottom:1px solid rgba(243,241,234,.12)}
+footer .foot-links a{color:var(--paper);text-underline-offset:3px}
 .tiers-open:focus-visible,.tiers-x:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
 .plans-note .tiers-open{margin-left:6px;font-size:14px}
 dialog.tiers{width:min(1100px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:var(--r3);background:var(--bg);color:var(--ink);box-shadow:0 0 0 1px var(--line),0 55px 120px -40px rgba(0,0,0,.6)}
@@ -1318,12 +1322,14 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
           <p>Sie haben keine Zeit für die Website? Wir übernehmen Änderungen, Backups und Updates und schicken Ihnen jeden Monat einen kurzen Bericht. In drei Stufen, monatlich kündbar nach 3 Monaten.</p>
           <div class="price"><small>ab</small>Fr. 39.– <small>pro Monat</small></div>
           <button type="button" class="tiers-open" data-open-tiers aria-haspopup="dialog">Die drei Stufen ansehen <span aria-hidden="true">→</span></button>
+          <a class="svc-more" href="website-betreuung.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc">
           <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="34" height="27" rx="4"/><path d="M4 14h34M10 20h11M10 25h7M26 20h6v8h-6z"/><path d="M42.5 22.5l3 3L32 39l-4.2 1.2L29 36z"/><path d="M39.6 25.4l3 3"/></svg></div>
           <h3>Websites &amp; Überarbeitungen</h3>
           <p>Neue Website oder Überarbeitung Ihrer bestehenden: schnell, auf dem Handy perfekt, bei Google gut auffindbar.</p>
           <div class="price"><small>ab</small>Fr. 490.–</div>
+          <a class="svc-more" href="website-erstellen-wil.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc">
           <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 40h22"/><path d="M10 34V26M16 34V20M22 34V24"/><circle cx="31" cy="17" r="9"/><path d="M27 18.5l3 3 5.5-6.5"/><path d="M37.5 23.5L44 30"/></svg></div>
@@ -1336,18 +1342,21 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
           <h3>Chatbots</h3>
           <p>Beantwortet Fragen zu Öffnungszeiten, Preisen und Terminen, auch um 23 Uhr am Sonntag. Weiter unten können Sie ihn ausprobieren.</p>
           <div class="price"><small>ab</small>Fr. 120.–</div>
+          <a class="svc-more" href="chatbot-fuer-website.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc">
           <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6h21l5 5v27"/><rect x="7" y="11" width="28" height="32" rx="2"/><path d="M11 30l6-7 5 5 3-3 6 5"/><circle cx="26" cy="18" r="2.2"/><path d="M12 35h18M12 39h11"/></svg></div>
           <h3>Flyer &amp; Plakate</h3>
           <p>Für Aktionen, Events und Eröffnungen. Druckfertig als PDF, inklusive Texte.</p>
           <div class="price"><small>ab</small>Fr. 40.–</div>
+          <a class="svc-more" href="flyer-social-media.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc">
           <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="24" height="39" rx="5"/><path d="M15 9.5h6"/><path d="M18 29s-6.5-3.9-6.5-8.2a3.4 3.4 0 0 1 6.5-1.5 3.4 3.4 0 0 1 6.5 1.5c0 4.3-6.5 8.2-6.5 8.2Z"/><path d="M13 36h10"/><path d="M35 4h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-3.5 3.5V15H35a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M37 9.5h4"/></svg></div>
           <h3>Social-Media-Posts</h3>
           <p>Fünf Posts für Instagram und Facebook im Stil Ihres Geschäfts, mit passenden Texten.</p>
           <div class="price"><small>ab</small>Fr. 35.–</div>
+          <a class="svc-more" href="flyer-social-media.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc neu">
           <div class="illu" aria-hidden="true"><svg viewBox="0 0 320 140">
@@ -1376,6 +1385,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
           <h3>Google-Profil &amp; Bewertungen</h3>
           <p>Wir richten Ihr Google-Unternehmensprofil vollständig ein: Öffnungszeiten, Fotos, Beschreibung. Dazu ein Bewertungs-Aufsteller für die Theke: Handy hinhalten, und Ihre Kundschaft landet direkt bei der Google-Bewertung.</p>
           <div class="price"><small>ab</small>Fr. 89.– <small>einmalig, inkl. 1 Aufsteller</small></div>
+          <a class="svc-more" href="google-profil-bewertungen.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc neu">
           <div class="illu" aria-hidden="true"><svg viewBox="0 0 320 140">
@@ -1400,6 +1410,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
           <h3>KI-Telefonassistent</h3>
           <p>Nimmt Anrufe an, wenn Sie gerade keine Hand frei haben. Er beantwortet Fragen zu Öffnungszeiten, Preisen und Terminen und notiert Rückrufwünsche für Sie, auch abends und am Wochenende.</p>
           <div class="price"><small>ab</small>Fr. 99.– <small>pro Monat · Einrichtung ab Fr. 290.–</small></div>
+          <a class="svc-more" href="ki-telefonassistent.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
         <div class="svc neu">
           <div class="illu" aria-hidden="true"><svg viewBox="0 0 320 140">
@@ -1426,6 +1437,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
           <h3>Social Media, SEO &amp; Google Ads</h3>
           <p>Wir betreuen Ihre Posts, verbessern Ihre Auffindbarkeit bei Google und führen kleine Werbekampagnen für Ihr Geschäft. Jeden Monat bekommen Sie einen kurzen Bericht, was es gebracht hat.</p>
           <div class="price"><small>ab</small>Fr. 199.– <small>pro Monat · Werbebudget separat</small></div>
+          <a class="svc-more" href="flyer-social-media.html">Mehr dazu <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -1643,6 +1655,7 @@ footer{padding-bottom:calc(var(--s6) + 84px)}
 </main>
 
 <footer>
+  <nav class="wrap foot-links" aria-label="Leistungen im Detail"><a href="website-erstellen-wil.html">Website erstellen in Wil</a><a href="website-betreuung.html">Website-Betreuung</a><a href="google-profil-bewertungen.html">Google-Profil &amp; Bewertungen</a><a href="ki-telefonassistent.html">KI-Telefonassistent</a><a href="chatbot-fuer-website.html">Chatbot für Websites</a><a href="flyer-social-media.html">Flyer &amp; Social Media</a></nav>
   <div class="wrap"><span>© 2026 Kabra Ostschweiz (früher Kabrane Studio) · Zinédine Kabrane · Wil SG</span><span>Probe-Website · Beispiele (Café Morgenrot, Coiffeur Muster) sind erfunden</span></div>
 </footer>
 </div>

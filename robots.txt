@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zinedinekabrane-pixel.github.io/kabrane-studio/sitemap.xml
